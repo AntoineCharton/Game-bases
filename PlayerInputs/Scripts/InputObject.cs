@@ -9,7 +9,7 @@ namespace PlayerInputs
     {
         public GameObject ControllableObject;
         public string InputType;
-        private List<IInputReceiver> receivers;
+        private List<Receiver> receivers;
         private InputBase inputScript;
         private bool isInitialized = false;
 
@@ -18,10 +18,11 @@ namespace PlayerInputs
 
             inputScript = (InputBase)ReflectionUtils.createObject(InputType);
             var ICharacterComponents = ControllableObject.GetComponentsInChildren<IInputReceiver>();
-            receivers = new List<IInputReceiver>();
+            receivers = new List<Receiver>();
             foreach (var component in ICharacterComponents)
             {
-                receivers.Add(component);
+                var receiver = new Receiver(component);
+                receivers.Add(receiver);
             }
 
             isInitialized = true;

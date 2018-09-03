@@ -19,14 +19,12 @@ namespace PlayerInputs
         public Vector3 GetPrimaryDirection()
         {
             var returnedDirection = primaryDirection;
-            //primaryDirection = Vector3.zero;
             return returnedDirection;
         }
 
         public Vector3 GetSecondaryDirection()
         {
             var returnedDirection = secondaryDirection;
-            //secondaryDirection = Vector3.zero;
             return returnedDirection;
         }
 

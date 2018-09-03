@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class CharacterControllerReactions : MonoBehaviour, IReactions
+public class CharacterControllerReactions : ReactionBehaviour, IReactions
 {
     public enum RotationType { LookAt, Rotate };
     public enum MoveDirection { Forward, World };
@@ -88,59 +88,24 @@ public class CharacterControllerReactions : MonoBehaviour, IReactions
         }
     }
 
-    public void PrimaryDirectionReaction(Vector3 direction)
+    public override void PrimaryDirectionReaction(Vector3 direction)
     {
         Move(direction);
     }
 
-    public void SecondaryDirectionReaction(Vector3 direction)
+    public override void SecondaryDirectionReaction(Vector3 direction)
     {
         Rotate(direction);
     }
 
-    public void ThirdDirectionReaction(Vector3 direction)
-    {
-        throw new NotImplementedException();
-    }
 
-    public void FirstAnalogReaction(float intensity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SecondAnalogReaction(float intensity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void FirstReaction(bool isActive) { }
-
-    public void SecondReaction(bool isActive)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ThirdReaction(bool isActive)
+    public override void ThirdReaction(bool isActive)
     {
         Jump(isActive);
     }
 
-    public void FourthReaction(bool isActive)
-    {
-        throw new NotImplementedException();
-    }
 
-    public void FifthReaction(bool isActive)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SixthReaction(bool isActive)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void WorldReaction(Vector3 position)
+    public override void WorldReaction(Vector3 position)
     {
         LookAt(position);
     }

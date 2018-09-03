@@ -13,34 +13,9 @@ namespace Reactions
             action = GetComponent<IReactions>();
         }
 
-        public void FifthInput(bool isActive)
-        {
-             action.FifthReaction(isActive);
-        }
-
-        public void FirstAnalog(float intensity)
-        {
-            action.FirstAnalogReaction(intensity);
-        }
-
-        public void FirstInput(bool isActive)
-        {
-            action.FirstReaction(isActive);
-        }
-
-        public void FourthInput(bool isActive)
-        {
-            action.FourthReaction(isActive);
-        }
-
         public void PrimaryDirection(Vector3 direction)
         {
             action.PrimaryDirectionReaction(direction);
-        }
-
-        public void SecondAnalog(float intensity)
-        {
-            action.SecondAnalogReaction(intensity);
         }
 
         public void SecondaryDirection(Vector3 direction)
@@ -53,16 +28,6 @@ namespace Reactions
             action.SecondReaction(isActive);
         }
 
-        public void SixthInput(bool isActive)
-        {
-            action.SixthReaction(isActive);
-        }
-
-        public void ThirdDirection(Vector3 direction)
-        {
-            action.ThirdDirectionReaction(direction);
-        }
-
         public void ThirdInput(bool isActive)
         {
             action.ThirdReaction(isActive);
@@ -71,6 +36,41 @@ namespace Reactions
         public void WorldPositionInput(Vector3 worldPosition)
         {
             action.WorldReaction(worldPosition);
+        }
+
+        public void ThirdDirection(Vector3 direction)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FirstAnalog(float intensity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SecondAnalog(float intensity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FirstInput(bool isActive)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FourthInput(bool isActive)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FifthInput(bool isActive)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SixthInput(bool isActive)
+        {
+            throw new NotImplementedException();
         }
     }
 }
