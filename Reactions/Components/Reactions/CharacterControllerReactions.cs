@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class CharacterControllerReactions : ReactionBehaviour, IReactions
+public class CharacterControllerReactions : ReactionBehaviour, IReactions, IGroundableObject
 {
     public enum RotationType { LookAt, Rotate };
     public enum MoveDirection { Forward, World };
@@ -18,6 +18,9 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions
     private bool receivedLookAt = false;
     CharacterController controller;
 
+    private bool isGrounded = false;
+    private int groundedCounter = 0;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -31,6 +34,11 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions
     {
         if (controller.isGrounded)
         {
+            isGrounded = true;
+        }
+
+        if (isGrounded)
+        {
             if (DirectionType == MoveDirection.Forward)
             {
                 moveDirection = transform.TransformDirection(moveDirection);
@@ -38,7 +46,10 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions
 
             moveDirection *= speed;
             if (isJumping)
+            {
                 moveDirection.y = jumpSpeed;
+                isGrounded = false;
+            }
 
         }
         moveDirection.y -= gravity * Time.deltaTime;
@@ -68,11 +79,11 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions
         if (RotateType == RotationType.LookAt && receivedLookAt == false)
         {
             var atan2 = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(eulerRotation.x, (atan2), eulerRotation.z ), rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(eulerRotation.x, (atan2), eulerRotation.z), rotationSpeed * Time.deltaTime);
         }
         else if (RotateType == RotationType.Rotate)
         {
-            transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y + (direction.x *  rotationSpeed * Time.deltaTime), eulerRotation.z );
+            transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y + (direction.x * rotationSpeed * Time.deltaTime), eulerRotation.z);
         }
     }
 
@@ -108,5 +119,10 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions
     public override void WorldReaction(Vector3 position)
     {
         LookAt(position);
+    }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
     }
 }
