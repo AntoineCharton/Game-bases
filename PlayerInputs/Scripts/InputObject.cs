@@ -44,6 +44,7 @@ namespace PlayerInputs
                     receiver.SecondaryDirection(inputScript.GetSecondaryDirection());
 
                 receiver.ThirdInput(inputScript.GetIsThirdInput());
+                receiver.FirstInput(inputScript.GetIsFirstInput());
 
                 if (inputScript.IsWorldDirectionEnabled())
                     receiver.WorldPositionInput(inputScript.GetWorldPosition());

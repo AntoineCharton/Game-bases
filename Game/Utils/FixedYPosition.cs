@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FixedYPosition : MonoBehaviour {
 	float fixedPosition = 0;
@@ -10,7 +8,7 @@ public class FixedYPosition : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		transform.position = new Vector3(transform.position.x, fixedPosition, transform.position.z);
 	}
 }

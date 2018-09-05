@@ -55,7 +55,7 @@ namespace Reactions
 
         public void FirstInput(bool isActive)
         {
-            throw new NotImplementedException();
+            action.FirstReaction(isActive);
         }
 
         public void FourthInput(bool isActive)
