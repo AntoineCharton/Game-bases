@@ -4,6 +4,11 @@ public class DisableOnTriggerStay : MonoBehaviour
 {
     public GameObject ObjectToEnable;
 
+    void Awake()
+    {
+        ObjectToEnable.SetActive(true);
+    }
+
       void OnTriggerExit(Collider collision)
     {
         ObjectToEnable.SetActive(true);
