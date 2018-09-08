@@ -30,6 +30,7 @@ namespace Reactions
 
         public void ThirdInput(bool isActive)
         {
+            
             action.ThirdReaction(isActive);
         }
 

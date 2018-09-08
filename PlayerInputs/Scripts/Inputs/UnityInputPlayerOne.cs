@@ -43,6 +43,12 @@ public class UnityInputPlayerOne : InputBase
             secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
         }
 
+        if(Input.GetButtonDown("Fire3")){
+            secondInput = true;
+        } else {
+            secondInput= false;
+        }
+
         if(Input.GetButton("Fire1")) {
             firstInput = true;
         }  else 

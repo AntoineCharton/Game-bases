@@ -17,6 +17,8 @@ public class CharacterAnimationController : MonoBehaviour
     void Update()
     {
         var speed = (transform.position - lastPosition).magnitude;
+        if (speed != 0)
+            speed /= Time.deltaTime;
         lastPosition = transform.position;
         Animator.SetFloat("Speed", speed * 10);
 

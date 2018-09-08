@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 
-public class EnableOnTriggerStay : MonoBehaviour {
-
+public class EnableOnTriggerStay : MonoBehaviour
+{
+    public string tagToWatch = "Player";
     public GameObject ObjectToEnable;
     void Awake()
     {
         ObjectToEnable.SetActive(false);
     }
-      void OnTriggerExit(Collider collision)
+    void OnTriggerExit(Collider collision)
     {
-        ObjectToEnable.SetActive(false);
+        if (collision.gameObject.tag == tagToWatch)
+            ObjectToEnable.SetActive(false);
     }
 
-	
-    void OnTriggerStay(Collider other)
-	{
-		 ObjectToEnable.SetActive(true);
-	}
+
+    void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag == tagToWatch)
+            ObjectToEnable.SetActive(true);
+    }
 }
