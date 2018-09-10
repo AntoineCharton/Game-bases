@@ -17,14 +17,23 @@ public class MapData : MonoBehaviour
         return Tiles;
     }
 
-    public void AddTile(int id, GameObject gameObject, Vector3 position)
+    public GameObject AddTile(int id, GameObject gameObject, Vector3 position)
     {
         if (Tiles[id] != null)
             DestroyImmediate(Tiles[id]);
 
         Tiles[id] = gameObject;
+
         Tiles[id].transform.parent = this.transform;
         Tiles[id].transform.localPosition = position;
+        return gameObject;
+    }
+
+    public void AddExtraSpace(int id, GameObject gameObject, Vector3 position) {
+        if(Tiles[id] != null)
+            DestroyImmediate(Tiles[id]);
+
+        Tiles[id] = gameObject;
     }
 
     public void RemoveTile(int id)
