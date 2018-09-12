@@ -19,7 +19,7 @@ public class DebugSceneUtils
         }
 
         Vector2 size = GUI.skin.label.CalcSize(new GUIContent(text));
-        GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height + 4, size.x, size.y), text);
+        GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height - 20, size.x, size.y), text);
         GUI.color = restoreColor;
         UnityEditor.Handles.EndGUI();
     }
