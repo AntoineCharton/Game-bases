@@ -18,7 +18,6 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions, IGrou
     CharacterController controller;
 
     private bool isGrounded = false;
-    private int groundedCounter = 0;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
