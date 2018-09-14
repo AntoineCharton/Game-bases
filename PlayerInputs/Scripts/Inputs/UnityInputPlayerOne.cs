@@ -18,6 +18,8 @@ public class UnityInputPlayerOne : InputBase
             enableWorldDirectionUpdate = false;
         }
 
+
+
         if (Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") > 0)
         {
             isKeyboard = true;
@@ -43,22 +45,36 @@ public class UnityInputPlayerOne : InputBase
             secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
         }
 
-        if(Input.GetButtonDown("Fire3")){
-            secondInput = true;
-        } else {
-            secondInput= false;
+        if (Input.GetButtonDown("Fire3"))
+        {
+            thirdInput = true;
+        }
+        else
+        {
+            thirdInput = false;
         }
 
-        if(Input.GetButton("Fire1")) {
+       if (Input.GetButtonDown("Fire2"))
+        {
+            secondInput = true;
+        }
+        else
+        {
+            secondInput = false;
+        }
+
+        if (Input.GetButton("Fire1"))
+        {
             firstInput = true;
-        }  else 
+        }
+        else
         {
             firstInput = false;
         }
 
         if (Input.GetButton("Jump"))
-            thirdInput = true;
+            fourthInput = true;
         else
-            thirdInput = false;
+            fourthInput = false;
     }
 }

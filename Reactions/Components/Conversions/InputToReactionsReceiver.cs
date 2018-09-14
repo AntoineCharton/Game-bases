@@ -30,7 +30,6 @@ namespace Reactions
 
         public void ThirdInput(bool isActive)
         {
-            
             action.ThirdReaction(isActive);
         }
 
@@ -61,7 +60,7 @@ namespace Reactions
 
         public void FourthInput(bool isActive)
         {
-            throw new NotImplementedException();
+            action.FourthReaction(isActive);
         }
 
         public void FifthInput(bool isActive)

@@ -6,4 +6,6 @@
     void UnRegisterSecond(Actions.TriggerAction triggerAction);
     void RegisterThird(Actions.TriggerAction triggerAction);
     void UnRegisterThird(Actions.TriggerAction triggerAction);
+    void RegisterFourth(Actions.TriggerAction triggerAction);
+    void UnRegisterFourth(Actions.TriggerAction triggerAction);
 }
