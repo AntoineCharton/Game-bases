@@ -31,7 +31,7 @@ public class UnityInputPlayerOne : InputBase
 
         if (isKeyboard == true)
         {
-            secondaryDirection = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
+            //secondaryDirection = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
@@ -42,7 +42,7 @@ public class UnityInputPlayerOne : InputBase
         }
         else
         {
-            secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
+            //secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
         }
 
         if (Input.GetButtonDown("Fire3"))
