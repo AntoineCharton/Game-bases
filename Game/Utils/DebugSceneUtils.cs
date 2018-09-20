@@ -3,6 +3,7 @@ public class DebugSceneUtils
 {
     static public void drawString(string text, Vector3 worldPos, Color? colour = null)
     {
+        #if UNITY_EDITOR
         UnityEditor.Handles.BeginGUI();
 
         var restoreColor = GUI.color;
@@ -22,5 +23,6 @@ public class DebugSceneUtils
         GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height - 20, size.x, size.y), text);
         GUI.color = restoreColor;
         UnityEditor.Handles.EndGUI();
+        #endif
     }
 }
