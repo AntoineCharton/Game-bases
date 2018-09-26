@@ -9,6 +9,8 @@ namespace PlayerInputs
     {
         public GameObject ControllableObject;
         public string InputType;
+        public bool isEnabled = true;
+        public string id = "";
         private List<Receiver> receivers;
         private InputBase inputScript;
         private bool isInitialized = false;
@@ -47,6 +49,7 @@ namespace PlayerInputs
                 receiver.FirstInput(inputScript.GetIsFirstInput());
                 receiver.SecondInput(inputScript.GetIsSecondInput());
                 receiver.FourthInput(inputScript.GetIsFourthInput());
+                receiver.SixthInput(inputScript.GetIsSixthInput());
 
                 if (inputScript.IsWorldDirectionEnabled())
                     receiver.WorldPositionInput(inputScript.GetWorldPosition());

@@ -63,6 +63,8 @@ public class InputManagerEditor : Editor
             {
                 elementToRemove = receiver;
             }
+            receiver.id = GUILayout.TextField(receiver.id, 25);
+            receiver.isEnabled = GUILayout.Toggle(receiver.isEnabled, "is Enabled");
             GUILayout.EndHorizontal();
             GUILayout.Label("_________________________________________________________________________________________________________________________________________________________________________");
             index++;

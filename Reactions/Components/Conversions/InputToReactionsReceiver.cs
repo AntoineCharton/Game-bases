@@ -70,7 +70,7 @@ namespace Reactions
 
         public void SixthInput(bool isActive)
         {
-            throw new NotImplementedException();
+            action.SixthReaction(isActive);
         }
     }
 }
