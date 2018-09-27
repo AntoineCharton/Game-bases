@@ -1,20 +1,27 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class ChangeMaterialShaderOnStart : MonoBehaviour
 {
     public Shader shader;
-    public Material Material;
-    private Shader previousShader;
+
+    public List<ShaderSwitcher> ShaderSwitcher;
+
     // Use this for initialization
     void Start()
     {
-        previousShader = Material.shader;
-        Material.shader = shader;
+
+        foreach(var shaderSwitcher in ShaderSwitcher) {
+            shaderSwitcher.Initialize(shader);
+        }
+       
     }
 
     void OnDestroy()
     {
-        if (previousShader != null)
-            Material.shader = previousShader;
+        foreach(var shaderSwitcher in ShaderSwitcher) {
+            shaderSwitcher.ResetMaterial();
+        }
+        
     }
 }
