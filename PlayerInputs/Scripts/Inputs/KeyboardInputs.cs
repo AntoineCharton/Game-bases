@@ -3,14 +3,14 @@ using PlayerInputs;
 
 public class KeyboardInputs : InputBase
 {
-
     bool isKeyboard = false;
     float verticalDirection = 0;
     float horizontalDirection = 0;
     PlayerInputPreferences PlayerInputPreferences;
+
     public override void UpdateInput()
     {
-        if(PlayerInputPreferences == null)
+        if (PlayerInputPreferences == null)
             PlayerInputPreferences = new PlayerInputPreferences();
 
         if (Input.GetKey(PlayerInputPreferences.forward))
@@ -67,6 +67,15 @@ public class KeyboardInputs : InputBase
         else
         {
             thirdInput = false;
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            fifthInput = true;
+        }
+        else
+        {
+            fifthInput = false;
         }
 
         if (Input.GetKey(PlayerInputPreferences.secondAction) || Input.GetMouseButton(0))

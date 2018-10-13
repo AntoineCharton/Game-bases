@@ -1,76 +1,75 @@
-﻿using System;
-using PlayerInputs;
+﻿using PlayerInputs;
 using UnityEngine;
 
 namespace Reactions
 {
     public class InputToReactionsReceiver : MonoBehaviour, IInputReceiver
     {
-        private IReactions action;
+        public ActionsCaller ActionsCaller;
 
         private void Awake()
         {
-            action = GetComponent<IReactions>();
+            ActionsCaller = new ActionsCaller(GetComponents<IReactions>());
         }
 
         public void PrimaryDirection(Vector3 direction)
         {
-            action.PrimaryDirectionReaction(direction);
+            ActionsCaller.PrimaryDirection(direction);
         }
 
         public void SecondaryDirection(Vector3 direction)
         {
-            action.SecondaryDirectionReaction(direction);
+            ActionsCaller.SecondaryDirection(direction);
         }
 
         public void SecondInput(bool isActive)
         {
-            action.SecondReaction(isActive);
+            ActionsCaller.SecondInput(isActive);
         }
 
         public void ThirdInput(bool isActive)
         {
-            action.ThirdReaction(isActive);
+            ActionsCaller.ThirdInput(isActive);
         }
 
         public void WorldPositionInput(Vector3 worldPosition)
         {
-            action.WorldReaction(worldPosition);
+            ActionsCaller.WorldPositionInput(worldPosition);
         }
 
         public void ThirdDirection(Vector3 direction)
         {
-            throw new NotImplementedException();
+            ActionsCaller.ThirdDirection(direction);
         }
 
         public void FirstAnalog(float intensity)
         {
-            throw new NotImplementedException();
+            ActionsCaller.FirstAnalog(intensity);
         }
 
         public void SecondAnalog(float intensity)
         {
-            throw new NotImplementedException();
+            ActionsCaller.SecondAnalog(intensity);
         }
 
         public void FirstInput(bool isActive)
         {
-            action.FirstReaction(isActive);
+            ActionsCaller.FirstInput(isActive);
         }
 
         public void FourthInput(bool isActive)
         {
-            action.FourthReaction(isActive);
+            ActionsCaller.FourthInput(isActive);
         }
 
         public void FifthInput(bool isActive)
         {
-            throw new NotImplementedException();
+            ActionsCaller.FifthInput(isActive);
         }
 
         public void SixthInput(bool isActive)
         {
-            action.SixthReaction(isActive);
+            ActionsCaller.SixthInput(isActive);
         }
     }
 }

@@ -14,18 +14,21 @@ namespace PlayerInputs
         protected bool sixthInput = false;
         protected Vector3 worldPosition;
         protected bool enableWorldDirectionUpdate = false;
+        private Vector3 returnedPrimaryDirection;
+        private Vector3 returnedSecondaryDirection;
+
         abstract public void UpdateInput();
 
         public Vector3 GetPrimaryDirection()
         {
-            var returnedDirection = primaryDirection;
-            return returnedDirection;
+            returnedPrimaryDirection = primaryDirection;
+            return returnedPrimaryDirection;
         }
 
         public Vector3 GetSecondaryDirection()
         {
             var returnedDirection = secondaryDirection;
-            return returnedDirection;
+            return returnedSecondaryDirection;
         }
 
         public bool GetIsFirstInput()

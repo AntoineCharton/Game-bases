@@ -49,6 +49,7 @@ namespace PlayerInputs
                 receiver.FirstInput(inputScript.GetIsFirstInput());
                 receiver.SecondInput(inputScript.GetIsSecondInput());
                 receiver.FourthInput(inputScript.GetIsFourthInput());
+                receiver.FifthInput(inputScript.GetIsFifthInput());
                 receiver.SixthInput(inputScript.GetIsSixthInput());
 
                 if (inputScript.IsWorldDirectionEnabled())

@@ -20,6 +20,11 @@ public class PlayerInputPreferences
 
     public PlayerInputPreferences()
     {
+        LoadPlayerPrefs();
+    }
+
+    public void LoadPlayerPrefs()
+    {
         forward = PlayerPrefs.GetString(forwardKey, "w");
         backward = PlayerPrefs.GetString(backwardKey, "s");
         left = PlayerPrefs.GetString(leftKey, "a");
@@ -27,5 +32,66 @@ public class PlayerInputPreferences
         action = PlayerPrefs.GetString(actionKey, "f");
         secondAction = PlayerPrefs.GetString(secondActionKey, "e");
         thirdAction = PlayerPrefs.GetString(thirdActionKey, "c");
+    }
+
+    public void SetQwerty()
+    {
+        PlayerPrefs.SetString(forwardKey, "w");
+        PlayerPrefs.SetString(backwardKey, "s");
+        PlayerPrefs.SetString(leftKey, "a");
+        PlayerPrefs.SetString(rightKey, "d");
+        PlayerPrefs.SetString(actionKey, "f");
+        PlayerPrefs.SetString(secondActionKey, "e");
+        PlayerPrefs.SetString(thirdActionKey, "c");
+
+        LoadPlayerPrefs();
+    }
+
+    public void SetAzerty()
+    {
+        PlayerPrefs.SetString(forwardKey, "z");
+        PlayerPrefs.SetString(backwardKey, "s");
+        PlayerPrefs.SetString(leftKey, "q");
+        PlayerPrefs.SetString(rightKey, "d");
+        PlayerPrefs.SetString(actionKey, "f");
+        PlayerPrefs.SetString(secondActionKey, "e");
+        PlayerPrefs.SetString(thirdActionKey, "c");
+        LoadPlayerPrefs();
+    }
+
+    public string GetForward()
+    {
+        return forward;
+    }
+
+    public string GetBackward()
+    {
+        return backward;
+    }
+
+    public string GetLeft()
+    {
+        return left;
+    }
+
+    public string GetRight()
+    {
+        return right;
+    }
+
+    public string GetAction()
+    {
+        return action;
+    }
+
+    public string GetSecondAction()
+    {
+        return secondAction;
+    }
+
+
+    public string GetThirdAction()
+    {
+        return thirdAction;
     }
 }
