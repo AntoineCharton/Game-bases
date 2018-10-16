@@ -96,6 +96,8 @@ public class KeyboardInputs : InputBase
             firstInput = false;
         }
 
+        if(Input.GetKey(PlayerInputPreferences.fourthAction)){}
+
         if (Input.GetButton("Jump"))
             fourthInput = true;
         else

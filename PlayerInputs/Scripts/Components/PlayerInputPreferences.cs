@@ -17,6 +17,8 @@ public class PlayerInputPreferences
     private const string secondActionKey = "secondActionKey";
     public string thirdAction;
     private const string thirdActionKey = "thridActionKey";
+    private const string fourthActionKey = "fourthActionKey";
+    public string fourthAction;
 
     public PlayerInputPreferences()
     {
@@ -32,6 +34,7 @@ public class PlayerInputPreferences
         action = PlayerPrefs.GetString(actionKey, "f");
         secondAction = PlayerPrefs.GetString(secondActionKey, "e");
         thirdAction = PlayerPrefs.GetString(thirdActionKey, "c");
+        fourthAction = PlayerPrefs.GetString(fourthActionKey, "q");
     }
 
     public void SetQwerty()
@@ -43,6 +46,7 @@ public class PlayerInputPreferences
         PlayerPrefs.SetString(actionKey, "f");
         PlayerPrefs.SetString(secondActionKey, "e");
         PlayerPrefs.SetString(thirdActionKey, "c");
+        PlayerPrefs.SetString(fourthActionKey, "q");
 
         LoadPlayerPrefs();
     }
@@ -56,6 +60,7 @@ public class PlayerInputPreferences
         PlayerPrefs.SetString(actionKey, "f");
         PlayerPrefs.SetString(secondActionKey, "e");
         PlayerPrefs.SetString(thirdActionKey, "c");
+        PlayerPrefs.SetString(fourthActionKey, "a");
         LoadPlayerPrefs();
     }
 
