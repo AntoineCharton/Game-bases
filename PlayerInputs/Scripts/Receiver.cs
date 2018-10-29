@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PlayerInputs
+namespace GZ.PlayerInputs
 {
     public class Receiver : IInputReceiver
     {

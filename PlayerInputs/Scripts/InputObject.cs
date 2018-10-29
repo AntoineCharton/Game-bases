@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using GZ.Reflection;
 
-namespace PlayerInputs
+namespace GZ.PlayerInputs
 {
 
     [System.Serializable]

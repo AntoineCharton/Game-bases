@@ -1,5 +1,5 @@
 using UnityEngine;
-using PlayerInputs;
+using GZ.PlayerInputs;
 
 public class KeyboardInputs : InputBase
 {

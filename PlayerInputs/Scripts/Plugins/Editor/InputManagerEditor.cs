@@ -1,7 +1,8 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-using PlayerInputs;
+using GZ.PlayerInputs;
+using GZ.Reflection;
 
 [CustomEditor(typeof(PlayerInputManager))]
 public class InputManagerEditor : Editor

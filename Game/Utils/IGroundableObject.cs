@@ -1,5 +1,5 @@
-﻿
-
-public interface IGroundableObject {
-	bool IsGrounded();
+﻿namespace GZ.Utils {
+	public interface IGroundableObject {
+		bool IsGrounded ();
+	}
 }

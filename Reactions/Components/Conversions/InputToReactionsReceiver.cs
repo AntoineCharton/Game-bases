@@ -1,7 +1,7 @@
-﻿using PlayerInputs;
+﻿using GZ.PlayerInputs;
 using UnityEngine;
 
-namespace Reactions
+namespace GZ.Reactions
 {
     public class InputToReactionsReceiver : MonoBehaviour, IInputReceiver
     {

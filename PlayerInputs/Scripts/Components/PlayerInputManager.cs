@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace PlayerInputs
+namespace GZ.PlayerInputs
 {
     public class PlayerInputManager : MonoBehaviour
     {

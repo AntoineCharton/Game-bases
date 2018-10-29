@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GZ.Reactions;
 
 public class XRotationAxisReaction : ReactionBehaviour, IReactions
 {

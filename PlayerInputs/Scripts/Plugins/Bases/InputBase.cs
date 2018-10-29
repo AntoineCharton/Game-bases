@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlayerInputs
+namespace GZ.PlayerInputs
 {
     public abstract class InputBase : UnityEngine.Object
     {

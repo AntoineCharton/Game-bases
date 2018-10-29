@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GZ.Reactions;
 
 public class BounceYPositionAxisReaction : ReactionBehaviour, IReactions {
 	private Vector3 startPosition;

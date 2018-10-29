@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using GZ.Utils;
 public class CharacterAnimationController : MonoBehaviour
 {
     public Animator Animator;

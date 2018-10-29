@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using GZ.Utils;
+using GZ.Reactions;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterControllerReactions : ReactionBehaviour, IReactions, IGroundableObject
