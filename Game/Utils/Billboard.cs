@@ -3,7 +3,6 @@
 namespace GZ.Utils {
 
 	public class Billboard : MonoBehaviour {
-		public Camera camera;
 		// Use this for initialization
 		void Start () {
 
