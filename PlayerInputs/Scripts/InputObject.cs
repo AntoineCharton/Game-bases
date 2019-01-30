@@ -16,9 +16,19 @@ namespace GZ.PlayerInputs
         private InputBase inputScript;
         private bool isInitialized = false;
 
-        public void InitializeReceiver()
+        public InputObject()
         {
 
+        }
+
+        public InputObject(GameObject gameObject, string _id)
+        {
+            ControllableObject = gameObject;
+            id = _id;
+        }
+
+        public void InitializeReceiver()
+        {
             inputScript = (InputBase)ReflectionUtils.createObject(InputType);
             var ICharacterComponents = ControllableObject.GetComponentsInChildren<IInputReceiver>();
             receivers = new List<Receiver>();
@@ -27,7 +37,6 @@ namespace GZ.PlayerInputs
                 var receiver = new Receiver(component);
                 receivers.Add(receiver);
             }
-
             isInitialized = true;
         }
 

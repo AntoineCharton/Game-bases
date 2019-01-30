@@ -49,5 +49,10 @@ namespace GZ.PlayerInputs
                     receiver.isEnabled = true;
             }
         }
+
+        public void AddReceiver(GameObject receiver, string id)
+        {
+            Receivers.Add(new InputObject(receiver, id));
+        }
     }
 }
