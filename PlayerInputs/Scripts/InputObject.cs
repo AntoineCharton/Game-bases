@@ -25,6 +25,8 @@ namespace GZ.PlayerInputs
         {
             ControllableObject = gameObject;
             id = _id;
+            InputType = "UnityInputPlayerOne";
+            InitializeReceiver();
         }
 
         public void InitializeReceiver()
