@@ -13,10 +13,14 @@ public class PlayerInputPreferences {
     private const string actionKey = "actionKey";
     public string secondAction;
     private const string secondActionKey = "secondActionKey";
-    public string thirdAction;
     private const string thirdActionKey = "thridActionKey";
+    public string thirdAction;
     private const string fourthActionKey = "fourthActionKey";
     public string fourthAction;
+    private const string fifthActionKey = "fifthActionKey";
+    public string fifthAction;
+    private const string sixthActionKey = "sixthActionKey";
+    public string sixthAction;
     public enum KeyTypes { Action, Attack, ThirdAction, FourthAction, Keyboard }
 
     public PlayerInputPreferences () {
@@ -29,9 +33,10 @@ public class PlayerInputPreferences {
         left = PlayerPrefs.GetString (leftKey, "a");
         right = PlayerPrefs.GetString (rightKey, "d");
         action = PlayerPrefs.GetString (actionKey, "f");
-        secondAction = PlayerPrefs.GetString (secondActionKey, "e");
+        secondAction = PlayerPrefs.GetString (secondActionKey, "Space");
         thirdAction = PlayerPrefs.GetString (thirdActionKey, "c");
         fourthAction = PlayerPrefs.GetString (fourthActionKey, "q");
+        fifthAction = PlayerPrefs.GetString(fifthActionKey, "e");
     }
 
     public void SetQwerty () {
@@ -43,7 +48,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (secondActionKey, "e");
         PlayerPrefs.SetString (thirdActionKey, "c");
         PlayerPrefs.SetString (fourthActionKey, "q");
-
+        PlayerPrefs.SetString(fifthActionKey, "e");
         LoadPlayerPrefs ();
     }
 
@@ -53,9 +58,10 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (leftKey, "q");
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
-        PlayerPrefs.SetString (secondActionKey, "e");
+        PlayerPrefs.SetString (secondActionKey, "Space");
         PlayerPrefs.SetString (thirdActionKey, "c");
         PlayerPrefs.SetString (fourthActionKey, "a");
+        PlayerPrefs.SetString(fifthActionKey, "e");
         LoadPlayerPrefs ();
     }
 

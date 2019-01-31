@@ -96,11 +96,28 @@ public class KeyboardInputs : InputBase
             firstInput = false;
         }
 
-        if(Input.GetKey(PlayerInputPreferences.fourthAction)){}
+        if(Input.GetKey(PlayerInputPreferences.fourthAction))
+        {
+            fourthInput = true;
+        }
+        else
+        {
+            fourthInput = false;
+        }
+
+        if (Input.GetKey(PlayerInputPreferences.fifthAction))
+        {
+            fifthInput = true;
+        } else
+        {
+            fifthInput = false;
+        }
 
         if (Input.GetButton("Jump"))
             fourthInput = true;
         else
             fourthInput = false;
+
+        
     }
 }
