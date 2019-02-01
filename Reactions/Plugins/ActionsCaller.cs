@@ -276,4 +276,30 @@ public class ActionsCaller
         }
     }
 
+    public void SeventhInput(bool isActive)
+    {
+        for (var i = 0; i < actions.Count; i++)
+        {
+            if (reactions[i].SeventhReaction)
+            {
+                try
+                {
+                    actions[i].SeventhReaction(isActive);
+                }
+                catch (NotImplementedException)
+                {
+                    reactions[i].SeventhReaction = false;
+                    if (i == actions.Count - 1)
+                    {
+                        for (var j = 0; j < reactions.Count; j++)
+                        {
+                            if (reactions[j].SeventhReaction)
+                                return;
+                        }
+                        throw new NotImplementedException();
+                    }
+                };
+            }
+        }
+    }
 }

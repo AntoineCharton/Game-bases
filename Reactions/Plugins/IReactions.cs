@@ -11,5 +11,6 @@ public interface IReactions {
     void FourthReaction(bool isActive);
     void FifthReaction(bool isActive);
     void SixthReaction(bool isActive);
+    void SeventhReaction(bool isActive);
     void WorldReaction(Vector3 position);
 }

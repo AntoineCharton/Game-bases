@@ -67,6 +67,11 @@ namespace GZ.Reactions
             ActionsCaller.FifthInput(isActive);
         }
 
+        public void SeventhInput(bool isActive)
+        {
+            ActionsCaller.SeventhInput(isActive);
+        }
+
         public void SixthInput(bool isActive)
         {
             ActionsCaller.SixthInput(isActive);

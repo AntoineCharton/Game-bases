@@ -17,6 +17,7 @@ namespace GZ.PlayerInputs
         bool FourthInputImplemented = true;
         bool FifthInputImplemented = true;
         bool SixthInputImplemented = true;
+        bool SeventhInputImplemented = true;
         bool WorldPositionInputImplemented = true;
 
         public Receiver(IInputReceiver _receiver)
@@ -186,6 +187,21 @@ namespace GZ.PlayerInputs
             catch (NotImplementedException)
             {
                 SixthInputImplemented = false;
+            }
+        }
+
+        public void SeventhInput(bool isActive)
+        {
+            if (SeventhInputImplemented == false)
+                return;
+
+            try
+            {
+                receiver.SeventhInput(isActive);
+            }
+            catch (NotImplementedException)
+            {
+                SeventhInputImplemented = false;
             }
         }
 

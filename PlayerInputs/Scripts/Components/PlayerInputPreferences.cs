@@ -21,9 +21,14 @@ public class PlayerInputPreferences {
     public string fifthAction;
     private const string sixthActionKey = "sixthActionKey";
     public string sixthAction;
+    private const string seventhActionKey = "seventhActionKey";
+    public string seventhAction;
     public enum KeyTypes { Action, Attack, ThirdAction, FourthAction, Keyboard }
 
     public PlayerInputPreferences () {
+#if UNITY_EDITOR
+        PlayerPrefs.DeleteAll();
+#endif
         LoadPlayerPrefs ();
     }
 
@@ -33,10 +38,12 @@ public class PlayerInputPreferences {
         left = PlayerPrefs.GetString (leftKey, "a");
         right = PlayerPrefs.GetString (rightKey, "d");
         action = PlayerPrefs.GetString (actionKey, "f");
-        secondAction = PlayerPrefs.GetString (secondActionKey, "Space");
+        secondAction = PlayerPrefs.GetString (secondActionKey, "z");
         thirdAction = PlayerPrefs.GetString (thirdActionKey, "c");
-        fourthAction = PlayerPrefs.GetString (fourthActionKey, "q");
-        fifthAction = PlayerPrefs.GetString(fifthActionKey, "e");
+        fourthAction = PlayerPrefs.GetString (fourthActionKey, "space");
+        fifthAction = PlayerPrefs.GetString(fifthActionKey, "escape");
+        sixthAction = PlayerPrefs.GetString(sixthActionKey, "q");
+        seventhAction = PlayerPrefs.GetString(seventhActionKey, "e");
     }
 
     public void SetQwerty () {
@@ -45,10 +52,12 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (leftKey, "a");
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
-        PlayerPrefs.SetString (secondActionKey, "e");
+        PlayerPrefs.SetString (secondActionKey, "z");
         PlayerPrefs.SetString (thirdActionKey, "c");
-        PlayerPrefs.SetString (fourthActionKey, "q");
-        PlayerPrefs.SetString(fifthActionKey, "e");
+        PlayerPrefs.SetString (fourthActionKey, "space");
+        PlayerPrefs.SetString(fifthActionKey, "escape");
+        PlayerPrefs.SetString(sixthActionKey, "q");
+        PlayerPrefs.SetString(seventhActionKey, "e");
         LoadPlayerPrefs ();
     }
 
@@ -58,10 +67,12 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (leftKey, "q");
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
-        PlayerPrefs.SetString (secondActionKey, "Space");
+        PlayerPrefs.SetString (secondActionKey, "w");
         PlayerPrefs.SetString (thirdActionKey, "c");
-        PlayerPrefs.SetString (fourthActionKey, "a");
-        PlayerPrefs.SetString(fifthActionKey, "e");
+        PlayerPrefs.SetString (fourthActionKey, "space");
+        PlayerPrefs.SetString(fifthActionKey, "escape");
+        PlayerPrefs.SetString(sixthActionKey, "a");
+        PlayerPrefs.SetString(seventhActionKey, "e");
         LoadPlayerPrefs ();
     }
 

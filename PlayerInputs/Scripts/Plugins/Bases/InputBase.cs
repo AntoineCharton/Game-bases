@@ -12,6 +12,7 @@ namespace GZ.PlayerInputs
         protected bool fourthInput = false;
         protected bool fifthInput = false;
         protected bool sixthInput = false;
+        protected bool seventhInput = false;
         protected Vector3 worldPosition;
         protected bool enableWorldDirectionUpdate = false;
         private Vector3 returnedPrimaryDirection;
@@ -57,6 +58,11 @@ namespace GZ.PlayerInputs
         public bool GetIsSixthInput()
         {
             return sixthInput;
+        }
+
+        public bool GetIsSeventhInput()
+        {
+            return seventhInput;
         }
 
         public Vector3 GetWorldPosition()

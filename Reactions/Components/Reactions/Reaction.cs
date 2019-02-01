@@ -39,6 +39,11 @@ namespace GZ.Reactions {
             throw new NotImplementedException ();
         }
 
+        public virtual void SeventhReaction(bool isActive)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void ThirdDirectionReaction (Vector3 direction) {
             throw new NotImplementedException ();
         }

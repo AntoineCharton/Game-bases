@@ -20,8 +20,7 @@ public class KeyboardInputs : InputBase
         else if (Input.GetKey(PlayerInputPreferences.backward))
         {
             verticalDirection = -1;
-        }
-        else
+        } else
         {
             verticalDirection = 0;
         }
@@ -96,16 +95,12 @@ public class KeyboardInputs : InputBase
             firstInput = false;
         }
 
-        if(Input.GetKey(PlayerInputPreferences.fourthAction))
-        {
+        if (Input.GetButton("Jump"))
             fourthInput = true;
-        }
         else
-        {
             fourthInput = false;
-        }
 
-        if (Input.GetKey(PlayerInputPreferences.fifthAction))
+        if (Input.GetKey(PlayerInputPreferences.fifthAction) || Input.GetMouseButton(1))
         {
             fifthInput = true;
         } else
@@ -113,11 +108,22 @@ public class KeyboardInputs : InputBase
             fifthInput = false;
         }
 
-        if (Input.GetButton("Jump"))
-            fourthInput = true;
+        if (Input.GetKeyDown(PlayerInputPreferences.sixthAction))
+        {
+            sixthInput = true;
+        }
         else
-            fourthInput = false;
+        {
+            sixthInput = false;
+        }
 
-        
+        if (Input.GetKeyDown(PlayerInputPreferences.seventhAction))
+        {
+            seventhInput = true;
+        }
+        else
+        {
+            seventhInput = false;
+        }
     }
 }

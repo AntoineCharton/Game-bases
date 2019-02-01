@@ -17,9 +17,8 @@ namespace GZ.PlayerInputs
         // Update is called once per frame
         void Update()
         {
-            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C)) && SelectedInput == InputType.Controller)
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q)) && SelectedInput == InputType.Controller)
             {
-                Debug.Log("Process inputs" + SelectedInput);
                 if (SwitchCoolDown != null)
                 {
                     StopCoroutine(SwitchCoolDown);

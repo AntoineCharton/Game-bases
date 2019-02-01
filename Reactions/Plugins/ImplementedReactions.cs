@@ -13,6 +13,7 @@ public class ImplementedReactions
     public bool FourthReaction;
     public bool FifthReaction;
     public bool SixthReaction;
+    public bool SeventhReaction;
     public bool WorldReaction;
 
     public ImplementedReactions()
@@ -28,6 +29,7 @@ public class ImplementedReactions
         FourthReaction = true;
         FifthReaction = true;
         SixthReaction = true;
+        SeventhReaction = true;
         WorldReaction = true;
     }
 }
