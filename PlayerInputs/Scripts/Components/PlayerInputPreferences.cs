@@ -28,9 +28,6 @@ public class PlayerInputPreferences {
     public enum KeyTypes { Action, Attack, ThirdAction, FourthAction, Keyboard }
 
     public PlayerInputPreferences () {
-#if UNITY_EDITOR
-        PlayerPrefs.DeleteAll();
-#endif
         LoadPlayerPrefs ();
     }
 
@@ -79,6 +76,92 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString(fourthSecondaryKey, "e");
         PlayerPrefs.SetString(cancelKey, "escape");
         LoadPlayerPrefs ();
+    }
+
+    public void SetFourthSecondary(string key)
+    {
+        if(key != "")
+            PlayerPrefs.SetString(fourthSecondaryKey, key);
+    }
+
+    public void SetThirdSecondary(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(thirdSecondaryKey, key);
+    }
+
+    public void SetSecondSecondary(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(secondSecondaryKey, key);
+    }
+
+    public void SetFirstSecondary(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(firstSecondaryInputKey, key);
+    }
+
+    public void SetForward(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(forwardKey, key);
+    }
+
+    public void SetBackward(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(backwardKey, key);
+    }
+
+    public void SetLeft(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(leftKey, key);
+    }
+
+    public void SetRight(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(rightKey, key);
+    }
+
+    public void SetAction(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(actionKey, key);
+    }
+
+    public void SetSecondAction(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(secondSecondaryKey, key);
+    }
+
+    public void SetThirdAction(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(thirdSecondaryKey, key);
+    }
+
+    public string GetFourthSecondary()
+    {
+        return fourthSecondaryInput;
+    }
+
+    public string GetThirdSecondary()
+    {
+        return thirdSecondaryInput;
+    }
+
+    public string GetSecondSecondary()
+    {
+        return secondSecondaryInput;
+    }
+
+    public string GetFirstSecondary()
+    {
+        return firstSecondaryInput;
     }
 
     public string GetForward () {
