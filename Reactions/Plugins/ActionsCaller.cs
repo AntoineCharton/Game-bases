@@ -71,24 +71,25 @@ public class ActionsCaller
         }
     }
 
-    public void SecondInput(bool isActive)
+
+    public void FireInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].SecondReaction)
+            if (reactions[i].FireReaction)
             {
                 try
                 {
-                    actions[i].SecondReaction(isActive);
+                    actions[i].FireReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].SecondReaction = false;
+                    reactions[i].FireReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].SecondReaction)
+                            if (reactions[j].FireReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -98,24 +99,51 @@ public class ActionsCaller
         }
     }
 
-    public void ThirdInput(bool isActive)
+    public void CancelInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].ThirdReaction)
+            if (reactions[i].CancelReaction)
             {
                 try
                 {
-                    actions[i].ThirdReaction(isActive);
+                    actions[i].CancelReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].ThirdReaction = false;
+                    reactions[i].CancelReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].ThirdReaction)
+                            if (reactions[j].CancelReaction)
+                                return;
+                        }
+                        throw new NotImplementedException();
+                    }
+                };
+            }
+        }
+    }
+
+    public void FirstSecondaryInput(bool isActive)
+    {
+        for (var i = 0; i < actions.Count; i++)
+        {
+            if (reactions[i].FirstSecondaryReaction)
+            {
+                try
+                {
+                    actions[i].FirstSecondaryReaction(isActive);
+                }
+                catch (NotImplementedException)
+                {
+                    reactions[i].FirstSecondaryReaction = false;
+                    if (i == actions.Count - 1)
+                    {
+                        for (var j = 0; j < reactions.Count; j++)
+                        {
+                            if (reactions[j].FirstSecondaryReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -168,24 +196,24 @@ public class ActionsCaller
         throw new NotImplementedException();
     }
 
-    public void FirstInput(bool isActive)
+    public void ActionInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].FirstReaction)
+            if (reactions[i].ActionReaction)
             {
                 try
                 {
-                    actions[i].FirstReaction(isActive);
+                    actions[i].ActionReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].FirstReaction = false;
+                    reactions[i].ActionReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].FirstReaction)
+                            if (reactions[j].ActionReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -195,24 +223,24 @@ public class ActionsCaller
         }
     }
 
-    public void FourthInput(bool isActive)
+    public void JumpInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].FourthReaction)
+            if (reactions[i].JumpReaction)
             {
                 try
                 {
-                    actions[i].FourthReaction(isActive);
+                    actions[i].JumpReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].FourthReaction = false;
+                    reactions[i].JumpReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].FourthReaction)
+                            if (reactions[j].JumpReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -222,24 +250,24 @@ public class ActionsCaller
         }
     }
 
-    public void FifthInput(bool isActive)
+    public void SecondSecondaryInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].FifthReaction)
+            if (reactions[i].SecondSecondaryReaction)
             {
                 try
                 {
-                    actions[i].FifthReaction(isActive);
+                    actions[i].SecondSecondaryReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].FifthReaction = false;
+                    reactions[i].SecondSecondaryReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].FifthReaction)
+                            if (reactions[j].SecondSecondaryReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -249,24 +277,24 @@ public class ActionsCaller
         }
     }
 
-    public void SixthInput(bool isActive)
+    public void ThirdSecondaryInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].SixthReaction)
+            if (reactions[i].ThirdSecondaryReaction)
             {
                 try
                 {
-                    actions[i].SixthReaction(isActive);
+                    actions[i].ThirdSecondaryReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].SixthReaction = false;
+                    reactions[i].ThirdSecondaryReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].SixthReaction)
+                            if (reactions[j].ThirdSecondaryReaction)
                                 return;
                         }
                         throw new NotImplementedException();
@@ -276,24 +304,24 @@ public class ActionsCaller
         }
     }
 
-    public void SeventhInput(bool isActive)
+    public void FourthSecondaryInput(bool isActive)
     {
         for (var i = 0; i < actions.Count; i++)
         {
-            if (reactions[i].SeventhReaction)
+            if (reactions[i].FourthSecondaryReaction)
             {
                 try
                 {
-                    actions[i].SeventhReaction(isActive);
+                    actions[i].FourthSecondaryReaction(isActive);
                 }
                 catch (NotImplementedException)
                 {
-                    reactions[i].SeventhReaction = false;
+                    reactions[i].FourthSecondaryReaction = false;
                     if (i == actions.Count - 1)
                     {
                         for (var j = 0; j < reactions.Count; j++)
                         {
-                            if (reactions[j].SeventhReaction)
+                            if (reactions[j].FourthSecondaryReaction)
                                 return;
                         }
                         throw new NotImplementedException();

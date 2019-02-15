@@ -6,13 +6,14 @@ namespace GZ.PlayerInputs
     {
         protected Vector3 primaryDirection;
         protected Vector3 secondaryDirection;
-        protected bool firstInput = false;
-        protected bool secondInput = false;
-        protected bool thirdInput = false;
-        protected bool fourthInput = false;
-        protected bool fifthInput = false;
-        protected bool sixthInput = false;
-        protected bool seventhInput = false;
+        protected bool firstSecondaryInput = false;
+        protected bool secondSecondaryInput = false;
+        protected bool thirdSecondaryInput = false;
+        protected bool fourthSecondaryInput = false;
+        protected bool actionInput = false;
+        protected bool fireInput = false;
+        protected bool cancelInput = false;
+        protected bool jumpInput = false;
         protected Vector3 worldPosition;
         protected bool enableWorldDirectionUpdate = false;
         private Vector3 returnedPrimaryDirection;
@@ -32,37 +33,44 @@ namespace GZ.PlayerInputs
             return returnedSecondaryDirection;
         }
 
-        public bool GetIsFirstInput()
+        public bool GetIsCancelInput()
         {
-            return firstInput;
+            return cancelInput;
         }
 
-        public bool GetIsSecondInput()
+        public bool GetIsActionInput()
         {
-            return secondInput;
-        }
-        public bool GetIsThirdInput()
-        {
-            return thirdInput;
-        }
-        public bool GetIsFourthInput()
-        {
-            return fourthInput;
+            return actionInput;
         }
 
-        public bool GetIsFifthInput()
+        public bool GetIsFireInput()
         {
-            return fifthInput;
+            return fireInput;
         }
 
-        public bool GetIsSixthInput()
+        public bool GetIsJumpInput()
         {
-            return sixthInput;
+            return jumpInput;
         }
 
-        public bool GetIsSeventhInput()
+        public bool GetIsFirstSecondaryInput()
         {
-            return seventhInput;
+            return firstSecondaryInput;
+        }
+
+        public bool GetIsSecondSecondaryInput()
+        {
+            return secondSecondaryInput;
+        }
+
+        public bool GetIsThirdSecondaryInput()
+        {
+            return thirdSecondaryInput;
+        }
+
+        public bool GetIsFourthSecondaryInput()
+        {
+            return fourthSecondaryInput;
         }
 
         public Vector3 GetWorldPosition()

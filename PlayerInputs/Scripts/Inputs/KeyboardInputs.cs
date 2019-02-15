@@ -50,80 +50,71 @@ public class KeyboardInputs : InputBase
             }
         }
 
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(PlayerInputPreferences.cancelInput))
         {
-            sixthInput = true;
+            cancelInput = true;
         }
         else
         {
-            sixthInput = false;
+            cancelInput = false;
         }
 
-        if (Input.GetKeyDown(PlayerInputPreferences.thirdAction))
+        if (Input.GetKeyDown(PlayerInputPreferences.firstSecondaryInput))
         {
-            thirdInput = true;
+            firstSecondaryInput = true;
         }
         else
         {
-            thirdInput = false;
+            firstSecondaryInput = false;
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetKey(PlayerInputPreferences.fireInput) || Input.GetMouseButton(0))
         {
-            fifthInput = true;
+            fireInput = true;
         }
         else
         {
-            fifthInput = false;
-        }
-
-        if (Input.GetKey(PlayerInputPreferences.secondAction) || Input.GetMouseButton(0))
-        {
-            secondInput = true;
-        }
-        else
-        {
-            secondInput = false;
+            fireInput = false;
         }
 
         if (Input.GetKey(PlayerInputPreferences.action))
         {
-            firstInput = true;
+            actionInput = true;
         }
         else
         {
-            firstInput = false;
+            actionInput = false;
         }
 
         if (Input.GetButton("Jump"))
-            fourthInput = true;
+            jumpInput = true;
         else
-            fourthInput = false;
+            jumpInput = false;
 
-        if (Input.GetKey(PlayerInputPreferences.fifthAction) || Input.GetMouseButton(1))
+        if (Input.GetKey(PlayerInputPreferences.secondSecondaryInput) || Input.GetMouseButton(1))
         {
-            fifthInput = true;
+            secondSecondaryInput = true;
         } else
         {
-            fifthInput = false;
+            secondSecondaryInput = false;
         }
 
-        if (Input.GetKeyDown(PlayerInputPreferences.sixthAction))
+        if (Input.GetKeyDown(PlayerInputPreferences.thirdSecondaryInput))
         {
-            sixthInput = true;
+            thirdSecondaryInput = true;
         }
         else
         {
-            sixthInput = false;
+            thirdSecondaryInput = false;
         }
 
-        if (Input.GetKeyDown(PlayerInputPreferences.seventhAction))
+        if (Input.GetKeyDown(PlayerInputPreferences.fourthSecondaryInput))
         {
-            seventhInput = true;
+            fourthSecondaryInput = true;
         }
         else
         {
-            seventhInput = false;
+            fourthSecondaryInput = false;
         }
     }
 }

@@ -22,14 +22,14 @@ namespace GZ.Reactions
             ActionsCaller.SecondaryDirection(direction);
         }
 
-        public void SecondInput(bool isActive)
+        public void FireInput(bool isActive)
         {
-            ActionsCaller.SecondInput(isActive);
+            ActionsCaller.FireInput(isActive);
         }
 
-        public void ThirdInput(bool isActive)
+        public void FirstSecondaryInput(bool isActive)
         {
-            ActionsCaller.ThirdInput(isActive);
+            ActionsCaller.FirstSecondaryInput(isActive);
         }
 
         public void WorldPositionInput(Vector3 worldPosition)
@@ -52,29 +52,34 @@ namespace GZ.Reactions
             ActionsCaller.SecondAnalog(intensity);
         }
 
-        public void FirstInput(bool isActive)
+        public void ActionInput(bool isActive)
         {
-            ActionsCaller.FirstInput(isActive);
+            ActionsCaller.ActionInput(isActive);
         }
 
-        public void FourthInput(bool isActive)
+        public void JumpInput(bool isActive)
         {
-            ActionsCaller.FourthInput(isActive);
+            ActionsCaller.JumpInput(isActive);
         }
 
-        public void FifthInput(bool isActive)
+        public void SecondSecondaryInput(bool isActive)
         {
-            ActionsCaller.FifthInput(isActive);
+            ActionsCaller.SecondSecondaryInput(isActive);
         }
 
-        public void SeventhInput(bool isActive)
+        public void FourthSecondaryInput(bool isActive)
         {
-            ActionsCaller.SeventhInput(isActive);
+            ActionsCaller.FourthSecondaryInput(isActive);
         }
 
-        public void SixthInput(bool isActive)
+        public void ThirdSecondaryInput(bool isActive)
         {
-            ActionsCaller.SixthInput(isActive);
+            ActionsCaller.ThirdSecondaryInput(isActive);
+        }
+
+        public void CancelInput(bool isActive)
+        {
+            ActionsCaller.CancelInput(isActive);
         }
     }
 }

@@ -9,13 +9,14 @@ namespace GZ.PlayerInputs
         void ThirdDirection(Vector3 direction);
         void FirstAnalog(float intensity);
         void SecondAnalog(float intensity);
-        void FirstInput(bool isActive);
-        void SecondInput(bool isActive);
-        void ThirdInput(bool isActive);
-        void FourthInput(bool isActive);
-        void FifthInput(bool isActive);
-        void SixthInput(bool isActive);
-        void SeventhInput(bool isActive);
+        void ActionInput(bool isActive);
+        void FireInput(bool isActive);
+        void FirstSecondaryInput(bool isActive);
+        void JumpInput(bool isActive);
+        void SecondSecondaryInput(bool isActive);
+        void ThirdSecondaryInput(bool isActive);
+        void FourthSecondaryInput(bool isActive);
         void WorldPositionInput(Vector3 worldPositionInput);
+        void CancelInput(bool isActive);
     }
 }

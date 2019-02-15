@@ -7,14 +7,15 @@ public class ImplementedReactions
     public bool ThirdDirectionReaction;
     public bool FirstAnalogReaction;
     public bool SecondAnalogReaction;
-    public bool FirstReaction;
-    public bool SecondReaction;
-    public bool ThirdReaction;
-    public bool FourthReaction;
-    public bool FifthReaction;
-    public bool SixthReaction;
-    public bool SeventhReaction;
+    public bool ActionReaction;
+    public bool FireReaction;
+    public bool FirstSecondaryReaction;
+    public bool JumpReaction;
+    public bool SecondSecondaryReaction;
+    public bool ThirdSecondaryReaction;
+    public bool FourthSecondaryReaction;
     public bool WorldReaction;
+    public bool CancelReaction;
 
     public ImplementedReactions()
     {
@@ -23,13 +24,14 @@ public class ImplementedReactions
         ThirdDirectionReaction = true;
         FirstAnalogReaction = true;
         SecondAnalogReaction = true;
-        FirstReaction = true;
-        SecondReaction = true;
-        ThirdReaction = true;
-        FourthReaction = true;
-        FifthReaction = true;
-        SixthReaction = true;
-        SeventhReaction = true;
+        ActionReaction = true;
+        FireReaction = true;
+        FirstSecondaryReaction = true;
+        JumpReaction = true;
+        SecondSecondaryReaction = true;
+        ThirdSecondaryReaction = true;
+        FourthSecondaryReaction = true;
         WorldReaction = true;
+        CancelReaction = true;
     }
 }

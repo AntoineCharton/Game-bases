@@ -110,7 +110,7 @@ public class CharacterControllerReactions : ReactionBehaviour, IReactions, IGrou
     }
 
 
-    public override void ThirdReaction(bool isActive)
+    public override void FirstSecondaryReaction(bool isActive)
     {
         Jump(isActive);
     }

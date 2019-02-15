@@ -11,14 +11,15 @@ namespace GZ.PlayerInputs
         bool ThirdDirectionImplemented = true;
         bool FirstAnalogImplemented = true;
         bool SecondAnalogImplemented = true;
-        bool FirstInputImplemented = true;
-        bool SecondInputImplemented = true;
-        bool ThirdInputImplemented = true;
-        bool FourthInputImplemented = true;
-        bool FifthInputImplemented = true;
-        bool SixthInputImplemented = true;
-        bool SeventhInputImplemented = true;
+        bool ActionInputImplemented = true;
+        bool FireInputImplemented = true;
+        bool FirstSecondaryInputInplemented = true;
+        bool JumpInputImplemented = true;
+        bool SecondSecondaryInputImplemented = true;
+        bool ThirdSecondaryInputImplemented = true;
+        bool FourthSecondaryInputImplemented = true;
         bool WorldPositionInputImplemented = true;
+        bool CancelInputInplemented = true;
 
         public Receiver(IInputReceiver _receiver)
         {
@@ -100,110 +101,127 @@ namespace GZ.PlayerInputs
             }
         }
 
-        public void FirstInput(bool isActive)
+        public void ActionInput(bool isActive)
         {
-            if (FirstInputImplemented == false)
+            if (ActionInputImplemented == false)
                 return;
 
             try
             {
-                receiver.FirstInput(isActive);
+                receiver.ActionInput(isActive);
             }
             catch (NotImplementedException)
             {
-                FirstInputImplemented = false;
+                ActionInputImplemented = false;
             }
         }
 
-        public void SecondInput(bool isActive)
+        public void FireInput(bool isActive)
         {
-            if (SecondInputImplemented == false)
+            if (FireInputImplemented == false)
                 return;
 
             try
             {
-                receiver.SecondInput(isActive);
+                receiver.FireInput(isActive);
             }
             catch (NotImplementedException)
             {
-                SecondInputImplemented = false;
+                FireInputImplemented = false;
             }
         }
 
-        public void ThirdInput(bool isActive)
+        public void FirstSecondaryInput(bool isActive)
         {
-            if (ThirdInputImplemented == false)
+            if (FirstSecondaryInputInplemented == false)
                 return;
 
             try
             {
-                receiver.ThirdInput(isActive);
+                receiver.FirstSecondaryInput(isActive);
             }
             catch (NotImplementedException)
             {
-                ThirdInputImplemented = false;
+                FirstSecondaryInputInplemented = false;
             }
         }
 
-        public void FourthInput(bool isActive)
+        public void JumpInput(bool isActive)
         {
-            if (FourthInputImplemented == false)
+            if (JumpInputImplemented == false)
                 return;
 
             try
             {
-                receiver.FourthInput(isActive);
+                receiver.JumpInput(isActive);
             }
             catch (NotImplementedException)
             {
-                FourthInputImplemented = false;
+                JumpInputImplemented = false;
             }
         }
 
-        public void FifthInput(bool isActive)
+        public void SecondSecondaryInput(bool isActive)
         {
-            if (FifthInputImplemented == false)
+            if (SecondSecondaryInputImplemented == false)
                 return;
 
             try
             {
-                receiver.FifthInput(isActive);
+                receiver.SecondSecondaryInput(isActive);
             }
             catch (NotImplementedException)
             {
-                FifthInputImplemented = false;
+                SecondSecondaryInputImplemented = false;
             }
         }
 
-        public void SixthInput(bool isActive)
+        public void ThirdSecondaryInput(bool isActive)
         {
-            if (SixthInputImplemented == false)
+            if (ThirdSecondaryInputImplemented == false)
                 return;
 
             try
             {
-                receiver.SixthInput(isActive);
+                receiver.ThirdSecondaryInput(isActive);
             }
             catch (NotImplementedException)
             {
-                SixthInputImplemented = false;
+                ThirdSecondaryInputImplemented = false;
             }
         }
 
-        public void SeventhInput(bool isActive)
+        public void FourthSecondaryInput(bool isActive)
         {
-            if (SeventhInputImplemented == false)
+            if (FourthSecondaryInputImplemented == false)
                 return;
 
             try
             {
-                receiver.SeventhInput(isActive);
+                receiver.FourthSecondaryInput(isActive);
             }
             catch (NotImplementedException)
             {
-                SeventhInputImplemented = false;
+                FourthSecondaryInputImplemented = false;
             }
         }
+
+        public void CancelInput(bool isActive)
+        {
+            if (CancelInputInplemented == false)
+                return;
+
+            try
+            {
+                receiver.CancelInput(isActive);
+            }
+            catch (NotImplementedException)
+            {
+                CancelInputInplemented = false;
+            }
+        }
+
+
 
         public void WorldPositionInput(Vector3 worldPositionInput)
         {

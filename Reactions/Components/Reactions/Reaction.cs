@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GZ.Reactions {
     public abstract class ReactionBehaviour : MonoBehaviour {
-        public virtual void FifthReaction (bool isActive) {
+        public virtual void SecondSecondaryReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
@@ -11,11 +11,11 @@ namespace GZ.Reactions {
             throw new NotImplementedException ();
         }
 
-        public virtual void FirstReaction (bool isActive) {
+        public virtual void ActionReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
-        public virtual void FourthReaction (bool isActive) {
+        public virtual void JumpReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
@@ -31,15 +31,15 @@ namespace GZ.Reactions {
             throw new NotImplementedException ();
         }
 
-        public virtual void SecondReaction (bool isActive) {
+        public virtual void FireReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
-        public virtual void SixthReaction (bool isActive) {
+        public virtual void ThirdSecondaryReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
-        public virtual void SeventhReaction(bool isActive)
+        public virtual void FourthSecondaryReaction(bool isActive)
         {
             throw new NotImplementedException();
         }
@@ -48,12 +48,18 @@ namespace GZ.Reactions {
             throw new NotImplementedException ();
         }
 
-        public virtual void ThirdReaction (bool isActive) {
+        public virtual void FirstSecondaryReaction (bool isActive) {
             throw new NotImplementedException ();
         }
 
         public virtual void WorldReaction (Vector3 position) {
             throw new NotImplementedException ();
         }
+
+        public virtual void CancelReaction(bool isActive)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

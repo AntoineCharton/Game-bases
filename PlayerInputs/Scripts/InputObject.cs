@@ -57,14 +57,14 @@ namespace GZ.PlayerInputs
                 if (inputScript.GetSecondaryDirection() != Vector3.zero)
                     receiver.SecondaryDirection(inputScript.GetSecondaryDirection());
 
-                receiver.ThirdInput(inputScript.GetIsThirdInput());
-                receiver.FirstInput(inputScript.GetIsFirstInput());
-                receiver.SecondInput(inputScript.GetIsSecondInput());
-                receiver.FourthInput(inputScript.GetIsFourthInput());
-                receiver.FifthInput(inputScript.GetIsFifthInput());
-                receiver.SixthInput(inputScript.GetIsSixthInput());
-                receiver.SeventhInput(inputScript.GetIsSeventhInput());
-
+                receiver.FirstSecondaryInput(inputScript.GetIsFirstSecondaryInput());
+                receiver.ActionInput(inputScript.GetIsActionInput());
+                receiver.FireInput(inputScript.GetIsFireInput());
+                receiver.JumpInput(inputScript.GetIsJumpInput());
+                receiver.SecondSecondaryInput(inputScript.GetIsSecondSecondaryInput());
+                receiver.ThirdSecondaryInput(inputScript.GetIsThirdSecondaryInput());
+                receiver.FourthSecondaryInput(inputScript.GetIsFourthSecondaryInput());
+                receiver.CancelInput(inputScript.GetIsCancelInput());
                 if (inputScript.IsWorldDirectionEnabled())
                     receiver.WorldPositionInput(inputScript.GetWorldPosition());
             }

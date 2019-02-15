@@ -46,41 +46,41 @@ public class UnityInputPlayerOne : InputBase
         }
 
         if(Input.GetButtonDown("Cancel")){
-            sixthInput = true;
+            thirdSecondaryInput = true;
         } else {
-            sixthInput = false;
+            thirdSecondaryInput = false;
         }
 
         if (Input.GetButtonDown("Fire3"))
         {
-            thirdInput = true;
+            firstSecondaryInput = true;
         }
         else
         {
-            thirdInput = false;
+            firstSecondaryInput = false;
         }
 
        if (Input.GetButtonDown("Fire2"))
         {
-            secondInput = true;
+            fireInput = true;
         }
         else
         {
-            secondInput = false;
+            fireInput = false;
         }
 
         if (Input.GetButton("Fire1"))
         {
-            firstInput = true;
+            actionInput = true;
         }
         else
         {
-            firstInput = false;
+            actionInput = false;
         }
 
         if (Input.GetButton("Jump"))
-            fourthInput = true;
+            jumpInput = true;
         else
-            fourthInput = false;
+            jumpInput = false;
     }
 }
