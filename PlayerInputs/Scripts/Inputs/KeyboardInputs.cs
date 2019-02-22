@@ -86,7 +86,7 @@ public class KeyboardInputs : InputBase
             actionInput = false;
         }
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetKey(KeyCode.Space))
             jumpInput = true;
         else
             jumpInput = false;
