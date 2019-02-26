@@ -17,7 +17,7 @@ namespace GZ.PlayerInputs
         // Update is called once per frame
         void Update()
         {
-            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q)) && SelectedInput == InputType.Controller)
+            if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q)) && SelectedInput == InputType.Controller)
             {
                 if (SwitchCoolDown != null)
                 {
@@ -34,6 +34,14 @@ namespace GZ.PlayerInputs
                 playerInputs.SwitchAllInputs(ControllerInputType);
                 SelectedInput = InputType.Controller;
             }
+        }
+
+        public void RefreshInputs()
+        {
+            if(SelectedInput == InputType.Keyboard)
+                playerInputs.SwitchAllInputs(KeyboardInputType);
+            else
+                playerInputs.SwitchAllInputs(ControllerInputType);
         }
 
         public string GetActionKeyboardKey()

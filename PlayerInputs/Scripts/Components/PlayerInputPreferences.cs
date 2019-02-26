@@ -25,7 +25,7 @@ public class PlayerInputPreferences {
     public string fourthSecondaryInput;
     private const string cancelKey = "cancelKey";
     public string cancelInput;
-    public enum KeyTypes { Action, Attack, ThirdAction, FourthAction, Keyboard }
+    public enum KeyTypes { Action, Attack, Jump,  FirstSecondaryAction,SecondSecondaryAction, ThirdSecondaryAction, FourthSecondaryAction}
 
     public PlayerInputPreferences () {
         LoadPlayerPrefs ();

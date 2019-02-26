@@ -9,6 +9,11 @@ namespace GZ.PlayerInputs
         // Use this for initialization
         void Awake()
         {
+            InitializeReceiver();
+        }
+
+        void InitializeReceiver()
+        {
             foreach (var receiver in Receivers)
             {
                 receiver.InitializeReceiver();
@@ -33,6 +38,23 @@ namespace GZ.PlayerInputs
             }
         }
 
+        public void DisableAllInputs()
+        {
+            foreach (var receiver in Receivers)
+            {
+                receiver.isEnabled = false;
+            }
+        }
+
+        public void EnableAllInputs()
+        {
+            foreach (var receiver in Receivers)
+            {
+                receiver.isEnabled = true;
+            }
+        }
+
+
         public void DisableInputByTag(string tag)
         {
             foreach (var receiver in Receivers)
@@ -53,6 +75,17 @@ namespace GZ.PlayerInputs
         public void AddReceiver(GameObject receiver, string id)
         {
             Receivers.Add(new InputObject(receiver, id));
+            InitializeReceiver();
+        }
+
+
+        public void RemoveReceiver(string id)
+        {
+            foreach(var receiver in Receivers)
+            {
+                if (receiver.id == tag)
+                    Receivers.Remove(receiver);
+            }
         }
     }
 }
