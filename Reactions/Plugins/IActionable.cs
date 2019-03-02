@@ -1,11 +1,11 @@
 ﻿public interface IActionable
 {
-    void Register(Actions.TriggerAction triggerAction);
-    void Unregister(Actions.TriggerAction triggerAction);
-    void RegisterSecond(Actions.TriggerAction triggerAction);
-    void UnRegisterSecond(Actions.TriggerAction triggerAction);
-    void RegisterThird(Actions.TriggerAction triggerAction);
-    void UnRegisterThird(Actions.TriggerAction triggerAction);
+    void RegisterAction(Actions.TriggerAction triggerAction);
+    void UnregisterAction(Actions.TriggerAction triggerAction);
+    void RegisterFireAction(Actions.TriggerAction triggerAction);
+    void UnRegisterFireAction(Actions.TriggerAction triggerAction);
+    void RegisterFirstSecondary(Actions.TriggerAction triggerAction);
+    void UnRegisterFirstSecondary(Actions.TriggerAction triggerAction);
     void RegisterFourth(Actions.TriggerAction triggerAction);
     void UnRegisterFourth(Actions.TriggerAction triggerAction);
 }
