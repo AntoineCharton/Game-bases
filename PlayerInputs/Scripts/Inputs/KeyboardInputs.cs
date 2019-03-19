@@ -39,15 +39,13 @@ public class KeyboardInputs : InputBase
         }
 
         primaryDirection = new Vector3(horizontalDirection, 0, verticalDirection);
-        if (isKeyboard == true)
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                var screenToWorld = hit.point;
-                worldPosition = screenToWorld;
-            }
+            var screenToWorld = hit.point;
+            worldPosition = screenToWorld;
         }
 
         if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(PlayerInputPreferences.cancelInput))
@@ -94,9 +92,11 @@ public class KeyboardInputs : InputBase
         if (Input.GetKey(PlayerInputPreferences.secondSecondaryInput) || Input.GetMouseButton(1))
         {
             secondSecondaryInput = true;
+            enableWorldDirectionUpdate = true;
         } else
         {
             secondSecondaryInput = false;
+            enableWorldDirectionUpdate = false;
         }
 
         if (Input.GetKeyDown(PlayerInputPreferences.thirdSecondaryInput))

@@ -29,8 +29,7 @@ namespace GZ.PlayerInputs
 
         public Vector3 GetSecondaryDirection()
         {
-            var returnedDirection = secondaryDirection;
-            return returnedSecondaryDirection;
+            return secondaryDirection;
         }
 
         public bool GetIsCancelInput()

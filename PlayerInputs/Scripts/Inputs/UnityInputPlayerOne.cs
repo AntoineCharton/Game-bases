@@ -8,6 +8,15 @@ public class UnityInputPlayerOne : InputBase
     public override void UpdateInput()
     {
         primaryDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
+
+        if(secondaryDirection != Vector3.zero)
+        {
+            secondSecondaryInput = true;
+        } else
+        {
+            secondSecondaryInput = false;
+        }
 
         if (isKeyboard)
         {
@@ -16,33 +25,6 @@ public class UnityInputPlayerOne : InputBase
         else
         {
             enableWorldDirectionUpdate = false;
-        }
-
-
-
-        if (Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") > 0)
-        {
-            isKeyboard = true;
-        }
-        else if (Input.GetAxis("SecondaryHorizontal") != 0 || Input.GetAxis("SecondaryVertical") != 0)
-        {
-            isKeyboard = false;
-        }
-
-        if (isKeyboard == true)
-        {
-            //secondaryDirection = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-            {
-                var screenToWorld = hit.point;
-                worldPosition = screenToWorld;
-            }
-        }
-        else
-        {
-            //secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
         }
 
         if(Input.GetButtonDown("Cancel")) {
@@ -60,7 +42,8 @@ public class UnityInputPlayerOne : InputBase
             firstSecondaryInput = false;
         }
 
-       if (Input.GetButtonDown("Fire2"))
+        Debug.Log(Input.GetAxis("FireTrigger"));
+       if (Input.GetButtonDown("Fire2") || Input.GetAxis("FireTrigger") < - 0.5f)
         {
             fireInput = true;
         }
