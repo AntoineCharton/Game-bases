@@ -28,7 +28,7 @@ namespace GZ.PlayerInputs
                 playerInputs.SwitchAllInputs(KeyboardInputType);
                 SelectedInput = InputType.Keyboard;
             }
-            else if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f && CanRefreshInputs == true && SelectedInput == InputType.Keyboard)
+            else if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)  && CanRefreshInputs == true && SelectedInput == InputType.Keyboard)
             {
                 Debug.Log("Switching to controller");
                 playerInputs.SwitchAllInputs(ControllerInputType);

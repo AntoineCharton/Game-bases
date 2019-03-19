@@ -45,10 +45,10 @@ public class UnityInputPlayerOne : InputBase
             //secondaryDirection = new Vector3(Input.GetAxis("SecondaryHorizontal"), 0, Input.GetAxis("SecondaryVertical"));
         }
 
-        if(Input.GetButtonDown("Cancel")){
-            thirdSecondaryInput = true;
+        if(Input.GetButtonDown("Cancel")) {
+            cancelInput = true;
         } else {
-            thirdSecondaryInput = false;
+            cancelInput = false;
         }
 
         if (Input.GetButtonDown("Fire3"))

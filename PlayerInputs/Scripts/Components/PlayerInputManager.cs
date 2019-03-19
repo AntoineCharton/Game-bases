@@ -1,15 +1,23 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using GZ.Reflection;
 
 namespace GZ.PlayerInputs
 {
     public class PlayerInputManager : MonoBehaviour
     {
+        public string defaultInputType;
         public List<InputObject> Receivers;
         // Use this for initialization
         void Awake()
         {
             InitializeReceiver();
+            if (defaultInputType == "")
+            {
+                var inheritedObjects = ReflectionUtils.GetEnumerableOfType<InputBase>(null);
+                defaultInputType = inheritedObjects[0];
+            }
+            SwitchAllInputs(defaultInputType);
         }
 
         void InitializeReceiver()
@@ -31,6 +39,7 @@ namespace GZ.PlayerInputs
 
         public void SwitchAllInputs(string inputType)
         {
+            defaultInputType = inputType;
             foreach (var receiver in Receivers)
             {
                 receiver.InputType = inputType;
@@ -74,7 +83,9 @@ namespace GZ.PlayerInputs
 
         public void AddReceiver(GameObject receiver, string id)
         {
-            Receivers.Add(new InputObject(receiver, id));
+            var newReceiver = new InputObject(receiver, id);
+            newReceiver.InputType = defaultInputType;
+            Receivers.Add(newReceiver);
             InitializeReceiver();
         }
 

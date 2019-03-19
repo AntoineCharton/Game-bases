@@ -22,6 +22,28 @@ public class InputManagerEditor : Editor
         InputObject elementToAdd = null;
         var index = 0;
         var catchedIndex = 0;
+
+        int defaultSelected = 0;
+        
+        
+        var isDefaultOneSelected = false;
+        for (var i = 0; i < inheritedObjects.Length; i++)
+        {
+            defaultSelected = i;
+            if (inputManager.defaultInputType == inheritedObjects[i])
+            {
+                inputManager.defaultInputType = inheritedObjects[i];
+                isDefaultOneSelected = true;
+                break;
+            }
+        }
+        defaultSelected = EditorGUILayout.Popup("default input type", defaultSelected, options);
+        inputManager.defaultInputType = inheritedObjects[defaultSelected];
+        if (!isDefaultOneSelected)
+        {
+            inputManager.defaultInputType = inheritedObjects[0];
+        }
+
         foreach (var receiver in inputManager.Receivers)
         {
             var labelText = "No gameobject selected";
