@@ -42,8 +42,25 @@ public class UnityInputPlayerOne : InputBase
             firstSecondaryInput = false;
         }
 
-        Debug.Log(Input.GetAxis("FireTrigger"));
-       if (Input.GetButtonDown("Fire2") || Input.GetAxis("FireTrigger") < - 0.5f)
+        if (Input.GetButtonDown("RightButton"))
+        {
+            fourthSecondaryInput = true;
+        }
+        else
+        {
+            fourthSecondaryInput = false;
+        }
+
+        if (Input.GetButtonDown("LeftButton"))
+        {
+            thirdSecondaryInput = true;
+        }
+        else
+        {
+            thirdSecondaryInput = false;
+        }
+
+        if (Input.GetButtonDown("Fire2") || Input.GetAxis("FireTrigger") < - 0.5f)
         {
             fireInput = true;
         }
