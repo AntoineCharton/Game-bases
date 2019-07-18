@@ -3,7 +3,6 @@ using GZ.PlayerInputs;
 
 public class KeyboardInputs : InputBase
 {
-    bool isKeyboard = false;
     float verticalDirection = 0;
     float horizontalDirection = 0;
     PlayerInputPreferences PlayerInputPreferences;
