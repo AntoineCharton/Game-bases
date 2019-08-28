@@ -10,18 +10,30 @@ public class ChangeMaterialShaderOnStart : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        SetToStart();
 
-        foreach(var shaderSwitcher in ShaderSwitcher) {
+    }
+
+    public void SetToStart()
+    {
+        foreach (var shaderSwitcher in ShaderSwitcher)
+        {
             shaderSwitcher.Initialize(shader);
         }
-       
+
+    }
+
+    public void ResetShader()
+    {
+        foreach (var shaderSwitcher in ShaderSwitcher)
+        {
+            shaderSwitcher.ResetMaterial();
+        }
     }
 
     void OnDestroy()
     {
-        foreach(var shaderSwitcher in ShaderSwitcher) {
-            shaderSwitcher.ResetMaterial();
-        }
+        ResetShader();
         
     }
 }
