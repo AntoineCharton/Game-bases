@@ -17,6 +17,9 @@ namespace GZ.PlayerInputs
         // Update is called once per frame
         void Update()
         {
+            if (playerInputs == null)
+                playerInputs = FindObjectOfType<PlayerInputManager>();
+
             if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q)) && SelectedInput == InputType.Controller)
             {
                 if (SwitchCoolDown != null)
