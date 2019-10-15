@@ -38,7 +38,7 @@ public class PlayerInputPreferences {
         right = PlayerPrefs.GetString (rightKey, "d");
         action = PlayerPrefs.GetString (actionKey, "f");
         fireInput = PlayerPrefs.GetString (fireKey, "z");
-        firstSecondaryInput = PlayerPrefs.GetString (firstSecondaryInputKey, "c");
+        firstSecondaryInput = PlayerPrefs.GetString (firstSecondaryInputKey, "shift");
         secondSecondaryInput = PlayerPrefs.GetString(secondSecondaryKey, "escape");
         thirdSecondaryInput = PlayerPrefs.GetString(thirdSecondaryKey, "q");
         fourthSecondaryInput = PlayerPrefs.GetString(fourthSecondaryKey, "e");
@@ -53,7 +53,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
         PlayerPrefs.SetString (fireKey, "z");
-        PlayerPrefs.SetString (firstSecondaryInputKey, "c");
+        PlayerPrefs.SetString (firstSecondaryInputKey, "shift");
         PlayerPrefs.SetString (jumpKey, "space");
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
         PlayerPrefs.SetString(thirdSecondaryKey, "q");
@@ -69,7 +69,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
         PlayerPrefs.SetString (fireKey, "w");
-        PlayerPrefs.SetString (firstSecondaryInputKey, "c");
+        PlayerPrefs.SetString (firstSecondaryInputKey, "shift");
         PlayerPrefs.SetString (jumpKey, "space");
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
         PlayerPrefs.SetString(thirdSecondaryKey, "a");
