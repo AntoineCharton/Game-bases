@@ -6,7 +6,6 @@ public class KeyboardInputs : InputBase
     float verticalDirection = 0;
     float horizontalDirection = 0;
     PlayerInputPreferences PlayerInputPreferences;
-    bool readyToRevertStealth = false;
 
     public override void UpdateInput()
     {
@@ -59,20 +58,14 @@ public class KeyboardInputs : InputBase
 
         firstSecondaryInput = false;
 
-        if (readyToRevertStealth)
-        {
-            firstSecondaryInput = true;
-            readyToRevertStealth = false;
-        }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftControl))
         {
             firstSecondaryInput = true;
-            readyToRevertStealth = false;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        else 
         {
-            readyToRevertStealth = true;
+            firstSecondaryInput = false;
         }
 
         if (Input.GetKey(PlayerInputPreferences.fireInput) || Input.GetMouseButton(0))
