@@ -33,7 +33,7 @@ public class UnityInputPlayerOne : InputBase
             cancelInput = false;
         }
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButton("Fire3"))
         {
             firstSecondaryInput = true;
         }
