@@ -16,6 +16,7 @@ namespace GZ.PlayerInputs
         void SecondSecondaryInput(bool isActive);
         void ThirdSecondaryInput(bool isActive);
         void FourthSecondaryInput(bool isActive);
+        void FifthSecondaryInput(bool isActive);
         void WorldPositionInput(Vector3 worldPositionInput);
         void CancelInput(bool isActive);
     }

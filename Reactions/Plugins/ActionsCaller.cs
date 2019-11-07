@@ -330,4 +330,31 @@ public class ActionsCaller
             }
         }
     }
+
+    public void FifthSecondaryInput(bool isActive)
+    {
+        for (var i = 0; i < actions.Count; i++)
+        {
+            if (reactions[i].FifthSecondaryReaction)
+            {
+                try
+                {
+                    actions[i].FifthSecondaryReaction(isActive);
+                }
+                catch (NotImplementedException)
+                {
+                    reactions[i].FifthSecondaryReaction = false;
+                    if (i == actions.Count - 1)
+                    {
+                        for (var j = 0; j < reactions.Count; j++)
+                        {
+                            if (reactions[j].FifthSecondaryReaction)
+                                return;
+                        }
+                        throw new NotImplementedException();
+                    }
+                };
+            }
+        }
+    }
 }

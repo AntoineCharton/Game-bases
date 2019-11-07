@@ -77,6 +77,11 @@ namespace GZ.Reactions
             ActionsCaller.ThirdSecondaryInput(isActive);
         }
 
+        public void FifthSecondaryInput(bool isActive)
+        {
+            ActionsCaller.FifthSecondaryInput(isActive);
+        }
+
         public void CancelInput(bool isActive)
         {
             ActionsCaller.CancelInput(isActive);

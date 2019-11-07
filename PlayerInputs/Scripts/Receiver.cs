@@ -18,6 +18,7 @@ namespace GZ.PlayerInputs
         bool SecondSecondaryInputImplemented = true;
         bool ThirdSecondaryInputImplemented = true;
         bool FourthSecondaryInputImplemented = true;
+        bool FifthSecondaryInputImplemented = true;
         bool WorldPositionInputImplemented = true;
         bool CancelInputInplemented = true;
 
@@ -203,6 +204,22 @@ namespace GZ.PlayerInputs
             catch (NotImplementedException)
             {
                 FourthSecondaryInputImplemented = false;
+            }
+        }
+
+
+        public void FifthSecondaryInput(bool isActive)
+        {
+            if (FifthSecondaryInputImplemented == false)
+                return;
+
+            try
+            {
+                receiver.FifthSecondaryInput(isActive);
+            }
+            catch (NotImplementedException)
+            {
+                FifthSecondaryInputImplemented = false;
             }
         }
 

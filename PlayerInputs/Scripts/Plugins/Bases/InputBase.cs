@@ -10,6 +10,7 @@ namespace GZ.PlayerInputs
         protected bool secondSecondaryInput = false;
         protected bool thirdSecondaryInput = false;
         protected bool fourthSecondaryInput = false;
+        protected bool fifthSecondaryInput = false;
         protected bool actionInput = false;
         protected bool fireInput = false;
         protected bool cancelInput = false;
@@ -70,6 +71,11 @@ namespace GZ.PlayerInputs
         public bool GetIsFourthSecondaryInput()
         {
             return fourthSecondaryInput;
+        }
+
+        public bool GetIsFifthSecondaryInput()
+        {
+            return fifthSecondaryInput;
         }
 
         public Vector3 GetWorldPosition()

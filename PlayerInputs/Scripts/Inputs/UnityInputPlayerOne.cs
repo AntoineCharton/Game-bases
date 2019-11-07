@@ -60,7 +60,16 @@ public class UnityInputPlayerOne : InputBase
             thirdSecondaryInput = false;
         }
 
-        if (Input.GetButtonDown("Fire2") || Input.GetAxis("FireTrigger") < - 0.5f)
+        if(Input.GetButtonDown("Fire2"))
+        {
+            fifthSecondaryInput = true;
+        }
+        else
+        {
+            fifthSecondaryInput = false;
+        }
+
+        if (Input.GetAxis("FireTrigger") < - 0.5f)
         {
             fireInput = true;
         }

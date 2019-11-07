@@ -12,6 +12,7 @@ public interface IReactions {
     void SecondSecondaryReaction(bool isActive);
     void ThirdSecondaryReaction(bool isActive);
     void FourthSecondaryReaction(bool isActive);
+    void FifthSecondaryReaction(bool isActive);
     void WorldReaction(Vector3 position);
     void CancelReaction(bool isActive);
 }

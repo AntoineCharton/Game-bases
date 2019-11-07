@@ -14,6 +14,7 @@ public class ImplementedReactions
     public bool SecondSecondaryReaction;
     public bool ThirdSecondaryReaction;
     public bool FourthSecondaryReaction;
+    public bool FifthSecondaryReaction;
     public bool WorldReaction;
     public bool CancelReaction;
 
@@ -31,6 +32,7 @@ public class ImplementedReactions
         SecondSecondaryReaction = true;
         ThirdSecondaryReaction = true;
         FourthSecondaryReaction = true;
+        FifthSecondaryReaction = true;
         WorldReaction = true;
         CancelReaction = true;
     }

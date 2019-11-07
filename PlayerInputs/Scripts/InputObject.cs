@@ -64,6 +64,7 @@ namespace GZ.PlayerInputs
                 receiver.SecondSecondaryInput(inputScript.GetIsSecondSecondaryInput());
                 receiver.ThirdSecondaryInput(inputScript.GetIsThirdSecondaryInput());
                 receiver.FourthSecondaryInput(inputScript.GetIsFourthSecondaryInput());
+                receiver.FifthSecondaryInput(inputScript.GetIsFifthSecondaryInput());
                 receiver.CancelInput(inputScript.GetIsCancelInput());
                 if (inputScript.IsWorldDirectionEnabled())
                     receiver.WorldPositionInput(inputScript.GetWorldPosition());
