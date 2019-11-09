@@ -23,6 +23,8 @@ public class PlayerInputPreferences {
     public string thirdSecondaryInput;
     private const string fourthSecondaryKey = "seventhActionKey";
     public string fourthSecondaryInput;
+    private const string fifthSecondarykey = "seventhActionKey";
+    public string fifthSecondaryInput;
     private const string cancelKey = "cancelKey";
     public string cancelInput;
     public enum KeyTypes { Action, Attack, Aim, Jump, FirstSecondaryAction,SecondSecondaryAction, ThirdSecondaryAction, FourthSecondaryAction}
@@ -42,6 +44,7 @@ public class PlayerInputPreferences {
         secondSecondaryInput = PlayerPrefs.GetString(secondSecondaryKey, "escape");
         thirdSecondaryInput = PlayerPrefs.GetString(thirdSecondaryKey, "q");
         fourthSecondaryInput = PlayerPrefs.GetString(fourthSecondaryKey, "e");
+        fifthSecondaryInput = PlayerPrefs.GetString(fifthSecondarykey, "x");
         jumpInput = PlayerPrefs.GetString(jumpKey, "space");
         cancelInput = PlayerPrefs.GetString(cancelKey, "escape");
     }
@@ -58,6 +61,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
         PlayerPrefs.SetString(thirdSecondaryKey, "q");
         PlayerPrefs.SetString(fourthSecondaryKey, "e");
+        PlayerPrefs.SetString(fifthSecondarykey, "x");
         PlayerPrefs.SetString(cancelKey, "escape");
         LoadPlayerPrefs ();
     }
@@ -74,8 +78,15 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
         PlayerPrefs.SetString(thirdSecondaryKey, "a");
         PlayerPrefs.SetString(fourthSecondaryKey, "e");
+        PlayerPrefs.SetString(fifthSecondarykey, "x");
         PlayerPrefs.SetString(cancelKey, "escape");
         LoadPlayerPrefs ();
+    }
+
+    public void SetFifthSecondary(string key)
+    {
+        if (key != "")
+            PlayerPrefs.SetString(fifthSecondarykey, key);
     }
 
     public void SetFourthSecondary(string key)
@@ -142,6 +153,11 @@ public class PlayerInputPreferences {
     {
         if (key != "")
             PlayerPrefs.SetString(thirdSecondaryKey, key);
+    }
+
+    public string GetFifthSecondary()
+    {
+        return fifthSecondaryInput;
     }
 
     public string GetFourthSecondary()

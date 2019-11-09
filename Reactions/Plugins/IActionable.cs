@@ -8,6 +8,8 @@
     void UnRegisterFirstSecondary(Actions.TriggerActionState triggerAction);
     void RegisterFourth(Actions.TriggerAction triggerAction);
     void UnRegisterFourth(Actions.TriggerAction triggerAction);
+    void RegisterFifth(Actions.TriggerAction triggerAction);
+    void UnRegisterFifth(Actions.TriggerAction triggerAction);
     void DisableFireing();
     void EnableFireing();
 }

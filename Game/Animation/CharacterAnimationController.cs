@@ -37,5 +37,26 @@ public class CharacterAnimationController : MonoBehaviour
             Animator.SetBool("IsGrounded", true);
         else
             Animator.SetBool("IsGrounded", false);
+
+    }
+
+    public void Kick()
+    {
+        Animator.SetBool("Kick", true);
+    }
+
+    public void StopKick()
+    {
+        Animator.SetBool("Kick", false);
+    }
+
+    public void Punch()
+    {
+        Animator.SetBool("Punch", true);
+    }
+
+    public void StopPunch()
+    {
+        Animator.SetBool("Punch", false);
     }
 }
