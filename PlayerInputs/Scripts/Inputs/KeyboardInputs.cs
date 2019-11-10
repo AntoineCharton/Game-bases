@@ -118,5 +118,14 @@ public class KeyboardInputs : InputBase
         {
             fourthSecondaryInput = false;
         }
+
+        if (Input.GetKeyDown(PlayerInputPreferences.fifthSecondaryInput))
+        {
+            fifthSecondaryInput = true;
+        }
+        else
+        {
+            fifthSecondaryInput = false;
+        }
     }
 }

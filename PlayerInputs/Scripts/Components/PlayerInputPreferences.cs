@@ -23,11 +23,11 @@ public class PlayerInputPreferences {
     public string thirdSecondaryInput;
     private const string fourthSecondaryKey = "seventhActionKey";
     public string fourthSecondaryInput;
-    private const string fifthSecondarykey = "seventhActionKey";
+    private const string fifthSecondarykey = "heightsActionKey";
     public string fifthSecondaryInput;
     private const string cancelKey = "cancelKey";
     public string cancelInput;
-    public enum KeyTypes { Action, Attack, Aim, Jump, FirstSecondaryAction,SecondSecondaryAction, ThirdSecondaryAction, FourthSecondaryAction}
+    public enum KeyTypes { Action, Attack, Aim, Jump, FirstSecondaryAction,SecondSecondaryAction, ThirdSecondaryAction, FourthSecondaryAction, FifthSecondaryAction}
 
     public PlayerInputPreferences () {
         LoadPlayerPrefs ();
