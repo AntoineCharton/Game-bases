@@ -7,7 +7,7 @@ namespace GZ.Reactions
     {
         public ActionsCaller ActionsCaller;
 
-        private void Awake()
+        void Awake()
         {
             ActionsCaller = new ActionsCaller(GetComponents<IReactions>());
         }

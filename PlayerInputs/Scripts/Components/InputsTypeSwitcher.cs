@@ -13,6 +13,10 @@ namespace GZ.PlayerInputs
         IEnumerator SwitchCoolDown;
         private bool CanRefreshInputs = true;
 
+        private void Awake()
+        {
+            Screen.lockCursor = true;
+        }
 
         // Update is called once per frame
         void Update()
@@ -20,7 +24,7 @@ namespace GZ.PlayerInputs
             if (playerInputs == null)
                 playerInputs = FindObjectOfType<PlayerInputManager>();
 
-            if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q)) && SelectedInput == InputType.Controller)
+            if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q) || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse X") > 0) && SelectedInput == InputType.Controller)
             {
                 if (SwitchCoolDown != null)
                 {
@@ -30,12 +34,14 @@ namespace GZ.PlayerInputs
                 }
                 playerInputs.SwitchAllInputs(KeyboardInputType);
                 SelectedInput = InputType.Keyboard;
+                Screen.lockCursor = false;
             }
             else if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)  && CanRefreshInputs == true && SelectedInput == InputType.Keyboard)
             {
                 Debug.Log("Switching to controller");
                 playerInputs.SwitchAllInputs(ControllerInputType);
                 SelectedInput = InputType.Controller;
+                Screen.lockCursor = true;
             }
         }
 
