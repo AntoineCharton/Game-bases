@@ -59,4 +59,14 @@ public class CharacterAnimationController : MonoBehaviour
     {
         Animator.SetBool("Punch", false);
     }
+
+    public void LookAround()
+    {
+        Animator.SetBool("LookAround", true);
+    }
+
+    public void StopLookAround()
+    {
+        Animator.SetBool("LookAround", false);
+    }
 }
