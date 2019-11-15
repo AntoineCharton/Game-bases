@@ -6,6 +6,7 @@ public class CharacterAnimationController : MonoBehaviour
     public IGroundableObject GroundableObject;
     public float LongIdleTime = 5;
     Vector3 lastPosition = Vector3.zero;
+    float previousSpeed;
 
     private float idleTimer = 0;
     void Start()
@@ -20,9 +21,12 @@ public class CharacterAnimationController : MonoBehaviour
         if (speed != 0)
             speed /= Time.deltaTime;
         lastPosition = transform.position;
-        Animator.SetFloat("Speed", speed * 10);
+        var finalspeed = Mathf.Lerp(previousSpeed, speed, 0.001f);
+        previousSpeed = speed;
+        //Debug.Log(finalspeed + " " + speed);
+        Animator.SetFloat("Speed", finalspeed * 10);
 
-        if (speed > 0 && GroundableObject.IsGrounded())
+        if (finalspeed > 0 && GroundableObject.IsGrounded())
         {
             Animator.SetBool("IsLongIdle", false);
             idleTimer = 0;
