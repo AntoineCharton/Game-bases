@@ -20,7 +20,7 @@ namespace GZ.PlayerInputs
             SwitchAllInputs(defaultInputType);
         }
 
-        void InitializeReceiver()
+        public void InitializeReceiver()
         {
             foreach (var receiver in Receivers)
             {
