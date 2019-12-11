@@ -8,7 +8,7 @@ public class ChangeMaterialShaderOnStart : MonoBehaviour
     public List<ShaderSwitcher> ShaderSwitcher;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         SetToStart();
 
