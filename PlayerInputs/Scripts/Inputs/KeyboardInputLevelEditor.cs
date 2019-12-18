@@ -7,6 +7,11 @@ public class KeyboardInputLevelEditor : InputBase
     float horizontalDirection = 0;
     PlayerInputPreferences PlayerInputPreferences;
 
+    public override void OnDestroy()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void UpdateInput()
     {
         if (PlayerInputPreferences == null)
@@ -118,7 +123,5 @@ public class KeyboardInputLevelEditor : InputBase
         {
             fourthSecondaryInput = false;
         }
-
-
     }
 }

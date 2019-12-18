@@ -7,6 +7,10 @@ public class KeyboardInputs : InputBase
     float horizontalDirection = 0;
     PlayerInputPreferences PlayerInputPreferences;
 
+    public override void OnDestroy()
+    {
+    }
+
     public override void UpdateInput()
     {
         if (PlayerInputPreferences == null)

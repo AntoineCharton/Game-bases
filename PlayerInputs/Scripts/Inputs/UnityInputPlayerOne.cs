@@ -5,6 +5,12 @@ public class UnityInputPlayerOne : InputBase
 {
 
     bool isKeyboard = false;
+
+    public override void OnDestroy()
+    {
+
+    }
+
     public override void UpdateInput()
     {
         primaryDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));

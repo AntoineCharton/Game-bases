@@ -22,6 +22,8 @@ namespace GZ.PlayerInputs
 
         abstract public void UpdateInput();
 
+        abstract public void OnDestroy();
+
         public Vector3 GetPrimaryDirection()
         {
             returnedPrimaryDirection = primaryDirection;

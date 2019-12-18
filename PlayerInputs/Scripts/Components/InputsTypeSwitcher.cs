@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 namespace GZ.PlayerInputs
 {
@@ -12,6 +13,8 @@ namespace GZ.PlayerInputs
         public PlayerInputManager playerInputs;
         IEnumerator SwitchCoolDown;
         private bool CanRefreshInputs = true;
+        private bool isControllerPluggedIn = true;
+        private bool isControllerJustUnplugged = false;
 
         private void Awake()
         {
@@ -24,7 +27,37 @@ namespace GZ.PlayerInputs
             if (playerInputs == null)
                 playerInputs = FindObjectOfType<PlayerInputManager>();
 
-            if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q) || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse X") > 0) && SelectedInput == InputType.Controller)
+            string[] temp = Input.GetJoystickNames();
+            isControllerJustUnplugged = false;
+            //Check whether array contains anything
+            if (temp.Length > 0)
+            {
+                //Iterate over every element
+                for (int i = 0; i < temp.Length; ++i)
+                {
+                    //Check if the string is empty or not
+                    if (string.IsNullOrEmpty(temp[i]))
+                    {
+                        if (isControllerPluggedIn)
+                        {
+                            isControllerJustUnplugged = true;
+                            FindObjectOfType<StandaloneInputModule>().enabled = false;
+                            EventSystem.current.sendNavigationEvents = false;
+                        }
+
+                        isControllerPluggedIn = false;
+                    }
+                    else
+                    {
+                        isControllerJustUnplugged = false;
+                        isControllerPluggedIn = true;
+                        FindObjectOfType<StandaloneInputModule>().enabled = true;
+                        EventSystem.current.sendNavigationEvents = true;
+                    }
+                }
+            }
+
+            if (((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q) || Input.GetAxis("Mouse X") < 0 || Input.GetAxis("Mouse X") > 0) && SelectedInput == InputType.Controller) || isControllerJustUnplugged)
             {
                 if (SwitchCoolDown != null)
                 {
@@ -36,7 +69,7 @@ namespace GZ.PlayerInputs
                 SelectedInput = InputType.Keyboard;
                 Screen.lockCursor = false;
             }
-            else if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)  && CanRefreshInputs == true && SelectedInput == InputType.Keyboard)
+            else if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)  && CanRefreshInputs == true && SelectedInput == InputType.Keyboard && isControllerPluggedIn)
             {
                 Debug.Log("Switching to controller");
                 playerInputs.SwitchAllInputs(ControllerInputType);
