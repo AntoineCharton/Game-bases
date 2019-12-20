@@ -72,7 +72,7 @@ public class KeyboardInputs : InputBase
             firstSecondaryInput = false;
         }
 
-        if (Input.GetKey(PlayerInputPreferences.fireInput) || Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             fireInput = true;
         }

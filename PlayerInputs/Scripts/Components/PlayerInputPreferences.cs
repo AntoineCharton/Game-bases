@@ -55,7 +55,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (leftKey, "a");
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
-        PlayerPrefs.SetString (fireKey, "z");
+        PlayerPrefs.SetString (fireKey, "g");
         PlayerPrefs.SetString (firstSecondaryInputKey, "ctrl");
         PlayerPrefs.SetString (jumpKey, "space");
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
@@ -72,7 +72,7 @@ public class PlayerInputPreferences {
         PlayerPrefs.SetString (leftKey, "q");
         PlayerPrefs.SetString (rightKey, "d");
         PlayerPrefs.SetString (actionKey, "f");
-        PlayerPrefs.SetString (fireKey, "w");
+        PlayerPrefs.SetString (fireKey, "g");
         PlayerPrefs.SetString (firstSecondaryInputKey, "shift");
         PlayerPrefs.SetString (jumpKey, "space");
         PlayerPrefs.SetString(secondSecondaryKey, "escape");
