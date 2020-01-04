@@ -21,7 +21,7 @@ public class CharacterAnimationController : MonoBehaviour
         if (speed != 0)
             speed /= Time.deltaTime;
         lastPosition = transform.position;
-        var finalspeed = Mathf.Lerp(previousSpeed, speed, 0.001f);
+        var finalspeed = Mathf.Lerp(previousSpeed, speed, 0.5f);
         previousSpeed = speed;
         //Debug.Log(finalspeed + " " + speed);
         Animator.SetFloat("Speed", finalspeed * 10);
